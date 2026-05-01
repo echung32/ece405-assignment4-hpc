@@ -1,0 +1,364 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{geometry}
+\newgeometry{vmargin={25mm}, hmargin={30mm,30mm}}
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{noto}
+\usepackage{CJKutf8}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{float,graphicx}
+\usepackage{subcaption}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{etoolbox}
+\appto\UrlBreaks{\do\-}
+
+\usepackage{mdframed}
+\newenvironment{modeloutput}[1]{%
+	\begin{mdframed}[backgroundcolor=gray!8, linecolor=gray!60, linewidth=0.8pt,
+		innerleftmargin=8pt, innerrightmargin=8pt, innertopmargin=6pt, innerbottommargin=6pt]%
+	\small\ttfamily\raggedright
+}{%
+	\end{mdframed}%
+}
+
+\lstset{
+	basicstyle=\small\ttfamily,
+	tabsize=4,
+	frame=single,
+	breaklines,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	showstringspaces=false,
+}
+
+\newcommand{\repofile}[2]{\href{https://github.com/echung32/ece405-assignment4-hpc/blob/main/#1}{#2}}
+\newcommand{\todo}[1]{\textbf{TODO:} #1}
+\graphicspath{{report/figures/}{figures/}}
+
+\begin{document}
+\title{Assignment 2: Systems and Parallelism}
+
+\author{Ethan Chung\\
+    {\tt\small University of Hawaii}\\
+    {\tt\small ECE 405: Intro to Large-Scale AI Systems}\\
+    {\tt\small [redacted]@hawaii.edu}}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Profiling and Benchmarking}
+
+\subsection{Problem (benchmarking\_script): 4 points}
+
+\begin{itemize}
+	\item[(a)] Write a script to perform basic end-to-end benchmarking of the forward and backward passes in your model.
+
+	\textit{Implemented in \repofile{cs336_systems/section1_1.py}{cs336\_systems/section1\_1.py}.}
+
+	\item[(b)] Time the forward and backward passes for the model sizes described in the assignment using 5 warmup steps and 10 measured steps. How long does a forward pass take? How about a backward pass? Do you see high variability across measurements, or is the standard deviation small?
+
+	\todo{Insert a timing table summarizing average and standard deviation for forward-only and forward-backward runs across the required model sizes. Add 1--2 sentences interpreting the variability.}
+
+	\item[(c)] Repeat the analysis without warm-up steps. How does this affect your results? Why do you think this happens? Also try to run the script with 1 or 2 warm-up steps. Why might the result still be different?
+
+	\todo{Summarize the no-warmup and low-warmup comparisons in 2--3 sentences, focusing on startup overhead, kernel compilation, caching, and allocator effects.}
+\end{itemize}
+
+\subsection{Problem (nsys\_profile): 5 points}
+
+\begin{itemize}
+	\item[(a)] Profile your forward pass, backward pass, and optimizer step using \texttt{nsys} for the required model sizes and context lengths. What is the total time spent on your forward pass? Does it match what we measured before with the Python standard library?
+
+	\textit{Profiling hooks and NVTX instrumentation are implemented in \repofile{cs336_systems/section1_1.py}{cs336\_systems/section1\_1.py}.}
+
+	\todo{Add a brief comparison between \texttt{nsys} forward-pass timing and the end-to-end benchmark timing once the profiles are collected.}
+
+	\item[(b)] What CUDA kernel takes the most cumulative GPU time during the forward pass? How many times is this kernel invoked during a single forward pass of your model? Is it the same kernel that takes the most runtime when you do both forward and backward passes?
+
+	\todo{Record the dominant kernel from the CUDA GPU Kernel Summary, report its invocation count, and compare forward-only versus full training-step profiles.}
+
+	\item[(c)] What other kernels besides matrix multiplies account for non-trivial CUDA runtime in the forward pass?
+
+	\todo{List the main non-GEMM kernels observed in the profile and briefly explain why they remain visible in the runtime breakdown.}
+
+	\item[(d)] Profile one complete training step with AdamW. How does the fraction of time spent on matrix multiplication change compared to inference? How about other kernels?
+
+	\todo{Add 1--2 sentences comparing the forward-only trace with the full training-step trace, with emphasis on backward-pass and optimizer overhead.}
+
+	\item[(e)] Compare the runtime of the softmax operation versus the matrix multiplication operations within the self-attention layer of your model during a forward pass. How does the difference in runtimes compare to the difference in FLOPs?
+
+	\todo{Use the NVTX-annotated attention profile to compare softmax and matmul runtime, then comment on why runtime does not scale exactly like FLOPs.}
+\end{itemize}
+
+\subsection{Problem (mixed\_precision\_accumulation): 1 point}
+
+\begin{itemize}
+	\item[(a)] Run the mixed-precision accumulation snippet from the assignment and comment on the accuracy of the results.
+
+	\todo{Summarize the observed numerical differences across FP32 accumulation, FP16 accumulation, and mixed accumulation in 2--3 sentences.}
+\end{itemize}
+
+\subsection{Problem (benchmarking\_mixed\_precision): 2 points}
+
+\begin{itemize}
+	\item[(a)] For the toy model in the assignment, identify the data types of the model parameters, the output of the first feed-forward layer, the output of layer norm, the logits, the loss, and the gradients under FP16 autocast mixed precision.
+
+	\todo{Fill in the datatype list for each requested component.}
+
+	\item[(b)] What parts of layer normalization are sensitive to mixed precision? If we use BF16 instead of FP16, do we still need to treat layer normalization differently? Why or why not?
+
+	\todo{Add a short explanation of why reductions and variance computations are more numerically sensitive than the surrounding linear layers.}
+
+	\item[(c)] Modify your benchmarking script to optionally run the model using mixed precision with BF16. Time the forward and backward passes with and without mixed precision for each language model size described in the assignment.
+
+	\textit{Mixed-precision benchmarking support is implemented in \repofile{cs336_systems/section1_1.py}{cs336\_systems/section1\_1.py}.}
+
+	\todo{Insert a timing table comparing FP32 and BF16 runs across model sizes, followed by 2--3 sentences on the scaling trend.}
+\end{itemize}
+
+\subsection{Problem (memory\_profiling): 4 points}
+
+\begin{itemize}
+	\item[(a)] Add an option to your profiling script to run the model through the PyTorch memory profiler and collect forward-only and full-training-step memory traces for the 2.7B model.
+
+	\textit{Memory-profiling support is implemented in \repofile{cs336_systems/section1_1.py}{cs336\_systems/section1\_1.py}.}
+
+	\todo{Insert two screenshots from \texttt{pytorch.org/memory\_viz}: one for forward-only execution and one for a full training step. Add 2--3 sentences identifying the main stages visible in the timeline.}
+
+	\item[(b)] What is the peak memory usage of each context length when doing a forward pass? What about when doing a full training step?
+
+	\todo{Add a table with peak forward and training-step memory for context lengths 128, 256, and 512.}
+
+	\item[(c)] Find the peak memory usage of the 2.7B model when using mixed precision, for both a forward pass and a full optimizer step. Does mixed precision significantly affect memory usage?
+
+	\todo{Summarize the mixed-precision memory comparison in 2--3 sentences.}
+
+	\item[(d)] Consider the 2.7B model. At the reference hyperparameters, what is the size of a tensor of activations in the Transformer residual stream, in single precision? Give this size in MB.
+
+	\todo{Show the activation-size derivation and report the resulting memory footprint in 1--2 sentences.}
+
+	\item[(e)] In the active memory timeline for a forward pass, what is the size of the largest visible allocations, and where do they come from?
+
+	\todo{Record the largest allocation size shown at reduced detail and identify its source from the stack trace.}
+\end{itemize}
+
+\section{Optimizing Attention with FlashAttention-2}
+
+\subsection{Problem (pytorch\_attention): 2 points}
+
+\begin{itemize}
+	\item[(a)] Benchmark your attention implementation across the specified embedding dimensions and sequence lengths, reporting forward time, backward time, memory usage, and any out-of-memory failures.
+
+	\textit{Attention benchmarking infrastructure is implemented in \repofile{cs336_systems/section1_2_attention.py}{cs336\_systems/section1\_2\_attention.py}.}
+
+	\todo{Insert the benchmark table, identify the smallest out-of-memory configuration, work through the memory accounting for that case, and add a 1--2 paragraph discussion of the scaling behavior.}
+\end{itemize}
+
+\section{Benchmarking JIT-Compiled Attention and FlashAttention-2}
+
+\subsection{Problem (torch\_compile): 2 points}
+
+\begin{itemize}
+	\item[(a)] Extend your attention benchmarking script to include a compiled version of your PyTorch attention implementation, and compare compiled versus uncompiled forward and backward timing.
+
+	\textit{Implemented in \repofile{cs336_systems/section1_3_model_compile.py}{cs336\_systems/section1\_3\_model\_compile.py} and \repofile{cs336_systems/section1_2_attention.py}{cs336\_systems/section1\_2\_attention.py}.}
+
+	\todo{Add a table comparing compiled and uncompiled attention latency for the required benchmark grid.}
+
+	\item[(b)] Compile the entire Transformer model in your end-to-end benchmarking script. How does the performance of the forward pass change? What about the combined forward and backward passes and optimizer steps?
+
+	\todo{Insert a table comparing vanilla and compiled Transformer runs, followed by a short discussion of where the end-to-end gains did or did not appear.}
+\end{itemize}
+
+\subsection{Problem (flash\_forward): 15 points}
+
+\begin{itemize}
+	\item[(a)] Write a pure PyTorch \texttt{autograd.Function} that implements the FlashAttention-2 forward pass.
+
+	\textit{Implemented in \repofile{cs336_systems/flash_attention.py}{cs336\_systems/flash\_attention.py}.}
+
+	\item[(b)] Write a Triton kernel for the forward pass of FlashAttention-2 and a corresponding \texttt{autograd.Function} wrapper that calls the fused kernel.
+
+	\textit{Implemented in \repofile{cs336_systems/flash_attention.py}{cs336\_systems/flash\_attention.py}.}
+
+	\item[(c)] Add an optional causal-masking flag to your FlashAttention-2 forward implementation.
+
+	\textit{Implemented in \repofile{cs336_systems/flash_attention.py}{cs336\_systems/flash\_attention.py}.}
+\end{itemize}
+
+\subsection{Problem (flash\_backward): 5 points}
+
+\begin{itemize}
+	\item[(a)] Implement the backward pass for your FlashAttention-2 \texttt{autograd.Function} using PyTorch and \texttt{torch.compile}.
+
+	\textit{Implemented in \repofile{cs336_systems/flash_attention.py}{cs336\_systems/flash\_attention.py}.}
+\end{itemize}
+
+\subsection{Problem (flash\_benchmarking): 5 points}
+
+\begin{itemize}
+	\item[(a)] Benchmark your Triton-backed FlashAttention-2 implementation against regular PyTorch attention across the required sequence lengths, embedding dimensions, and precisions.
+
+	\textit{Implemented in \repofile{cs336_systems/section1_3_flash_benchmark.py}{cs336\_systems/section1\_3\_flash\_benchmark.py}.}
+
+	\todo{Insert the forward, backward, and end-to-end latency table comparing FlashAttention-2 and regular PyTorch attention. Summarize the main performance crossover points once results are available.}
+\end{itemize}
+
+\section{Distributed Communication and Data Parallel Training}
+
+\subsection{Problem (distributed\_communication\_single\_node): 5 points}
+
+\begin{itemize}
+	\item[(a)] Benchmark all-reduce on a single node while varying backend, tensor size, and process count.
+
+	\textit{Benchmarking support is implemented in \repofile{cs336_systems/section2_benchmarks.py}{cs336\_systems/section2\_benchmarks.py}.}
+
+	\todo{Insert the all-reduce comparison plot or table for Gloo versus NCCL, 1MB through 1GB tensor sizes, and 2/4/6 processes. Add 2--3 sentences on how backend, message size, and process count interact.}
+\end{itemize}
+
+\subsection{Problem (naive\_ddp): 5 points}
+
+\begin{itemize}
+	\item[(a)] Implement na"{i}ve distributed data parallel training by all-reducing individual parameter gradients after the backward pass.
+
+	\textit{Implemented in \repofile{cs336_systems/distributed.py}{cs336\_systems/distributed.py}.}
+\end{itemize}
+
+\subsection{Problem (naive\_ddp\_benchmarking): 3 points}
+
+\begin{itemize}
+	\item[(a)] Benchmark language-model training with the na"{i}ve DDP implementation and measure both total iteration time and time spent communicating gradients.
+
+	\textit{Benchmarking support is implemented in \repofile{cs336_systems/section2_benchmarks.py}{cs336\_systems/section2\_benchmarks.py}.}
+
+	\todo{Describe the benchmark setup for the 1 node $\times$ 2 GPU XL configuration and report total step time plus communication time.}
+\end{itemize}
+
+\subsection{Problem (minimal\_ddp\_flat\_benchmarking): 2 points}
+
+\begin{itemize}
+	\item[(a)] Modify the minimal DDP implementation to all-reduce one flattened gradient tensor and compare it with the per-parameter variant.
+
+	\textit{Flattened-gradient benchmarking is implemented in \repofile{cs336_systems/section2_benchmarks.py}{cs336\_systems/section2\_benchmarks.py}.}
+
+	\todo{Report time per training iteration and communication time for the flattened-gradient variant, then compare against the per-parameter baseline in 1--2 sentences.}
+\end{itemize}
+
+\subsection{Problem (ddp\_overlap\_individual\_parameters): 5 points}
+
+\begin{itemize}
+	\item[(a)] Implement a DDP container that overlaps backward computation with communication of individual parameter gradients.
+
+	\textit{Implemented in \repofile{cs336_systems/distributed.py}{cs336\_systems/distributed.py}.}
+\end{itemize}
+
+\subsection{Problem (ddp\_overlap\_individual\_parameters\_benchmarking): 1 point}
+
+\begin{itemize}
+	\item[(a)] Benchmark the overlap-capable DDP implementation against the earlier DDP variants.
+
+	\textit{Benchmarking support is implemented in \repofile{cs336_systems/section2_benchmarks.py}{cs336\_systems/section2\_benchmarks.py}.}
+
+	\todo{Report time per training iteration for the overlap implementation and compare it with the non-overlapped baselines in 1--2 sentences.}
+
+	\item[(b)] Collect \texttt{nsys} traces comparing the initial DDP implementation with the overlap-capable implementation.
+
+	\todo{Insert two profiler screenshots and briefly explain how they demonstrate the presence or absence of communication-compute overlap.}
+\end{itemize}
+
+\subsection{Problem (ddp\_overlap\_bucketed): 8 points}
+
+\begin{itemize}
+	\item[(a)] Implement a DDP container that uses bucketed gradient communication while still overlapping communication with the backward pass.
+
+	\textit{Implemented in \repofile{cs336_systems/distributed.py}{cs336\_systems/distributed.py}.}
+\end{itemize}
+
+\subsection{Problem (ddp\_bucketed\_benchmarking): 3 points}
+
+\begin{itemize}
+	\item[(a)] Benchmark the bucketed DDP implementation while varying bucket size and compare the results with the previous DDP variants.
+
+	\textit{Benchmarking support is implemented in \repofile{cs336_systems/section2_benchmarks.py}{cs336\_systems/section2\_benchmarks.py}.}
+
+	\todo{Add the iteration-time results for bucket sizes 1, 10, 100, and 1000 MB, followed by 3--4 sentences on whether the trend matches expectations and why.}
+
+	\item[(b)] Model the DDP communication overhead as a function of model size, bandwidth, call overhead, and number of buckets. Derive the optimal bucket size.
+
+	\todo{Insert the communication-overhead equation and the resulting expression for the optimal bucket size.}
+\end{itemize}
+
+\subsection{Problem (communication\_accounting): 10 points}
+
+\begin{itemize}
+	\item[(a)] Compute the single-device memory required for the XXL model's master weights, accumulated gradients, optimizer states, and saved activations.
+
+	\todo{Show the parameter-count and memory derivation, then report the number of H100 80GB GPUs worth of memory required.}
+
+	\item[(b)] Derive the per-device memory expression under FSDP-style sharding and determine the required value of $N_{\mathrm{FSDP}}$ to fit within 95GB per device.
+
+	\todo{Insert the sharded-memory expression and solve for the minimum $N_{\mathrm{FSDP}}$.}
+
+	\item[(c)] Using the provided TPU v5p bandwidth and FLOP rate, determine the per-device batch size at which the model becomes compute bound, and report the overall batch size.
+
+	\todo{Work through the communication-versus-compute threshold calculation and report the resulting local and global batch sizes.}
+
+	\item[(d)] What other tricks can reduce total batch size while maintaining high throughput?
+
+	\todo{Add a short paragraph discussing techniques such as gradient accumulation, rematerialization, pipeline scheduling choices, or parallelism-layout changes, backed by equations or references as appropriate.}
+\end{itemize}
+
+\section{Optimizer State Sharding}
+
+\subsection{Problem (optimizer\_state\_sharding): 15 points}
+
+\begin{itemize}
+	\item[(a)] Implement a container class that shards optimizer state across ranks and synchronizes updated parameters after each optimizer step.
+
+	\textit{Implemented in \repofile{cs336_systems/sharded_optimizer.py}{cs336\_systems/sharded\_optimizer.py}.}
+\end{itemize}
+
+\subsection{Problem (optimizer\_state\_sharding\_accounting): 5 points}
+
+\begin{itemize}
+	\item[(a)] Profile peak memory usage with and without optimizer state sharding, and break down the memory consumption by component.
+
+	\textit{Benchmarking support is implemented in \repofile{cs336_systems/section3_benchmarks.py}{cs336\_systems/section3\_benchmarks.py}.}
+
+	\todo{Report peak memory after model initialization, just before the optimizer step, and just after the optimizer step, then summarize whether the results match expectations.}
+
+	\item[(b)] Measure the effect of optimizer state sharding on training speed.
+
+	\todo{Add 2--3 sentences with the per-iteration timing comparison between the sharded and unsharded runs.}
+
+	\item[(c)] How does this implementation differ from ZeRO stage 1?
+
+	\todo{Summarize the main differences in memory layout and communication volume relative to ZeRO stage 1.}
+\end{itemize}
+
+\appendix
+
+\section{Appendix}
+
+\subsection{Code Availability}
+
+All code mentioned in this report is available at \href{https://github.com/echung32/ece405-assignment4-hpc}{github.com/echung32/ece405-assignment4-hpc}.
+
+\subsection{Artifacts and Logs}
+
+\todo{List the relevant output directories under \texttt{data/} and \texttt{logs/} once the benchmark campaigns have been run and the final figures or tables are generated.}
+
+\subsection{Notes on Remaining Fill-In Work}
+
+\todo{Before final submission, replace each placeholder with the corresponding measurement table, screenshot, derivation, or written commentary required by the assignment.}
+
+\end{document}
