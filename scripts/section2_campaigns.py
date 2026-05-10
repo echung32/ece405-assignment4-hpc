@@ -2,28 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
-import shlex
-import subprocess
-import sys
-from dataclasses import dataclass
 from pathlib import Path
 
-
-@dataclass(frozen=True)
-class CampaignRun:
-    name: str
-    module: str
-    args: tuple[str, ...]
-
-
-def ensure_layout(campaign: str) -> tuple[Path, Path, Path]:
-    log_dir = Path("logs") / "section2" / campaign
-    data_dir = Path("data") / "section2" / campaign
-    analysis_dir = Path("data") / "section2" / "analysis" / campaign
-    log_dir.mkdir(parents=True, exist_ok=True)
-    data_dir.mkdir(parents=True, exist_ok=True)
-    analysis_dir.mkdir(parents=True, exist_ok=True)
-    return log_dir, data_dir, analysis_dir
+from scripts.campaign_utils import CampaignRun, ensure_layout, execute_runs
 
 
 def build_allreduce_runs(smoke: bool) -> list[CampaignRun]:
@@ -181,7 +162,7 @@ def build_runs(kind: str, smoke: bool) -> list[CampaignRun]:
 def run_campaign(args: argparse.Namespace) -> dict[str, object]:
     campaign = args.campaign or f"assignment_section2_{args.kind}_{'smoke' if args.smoke else 'full'}"
     runs = build_runs(args.kind, smoke=args.smoke)
-    log_dir, data_dir, analysis_dir = ensure_layout(campaign)
+    log_dir, data_dir, analysis_dir = ensure_layout("section2", campaign)
 
     (analysis_dir / "run_plan.json").write_text(
         json.dumps(
@@ -195,30 +176,16 @@ def run_campaign(args: argparse.Namespace) -> dict[str, object]:
         )
     )
 
-    orchestrator_lines = [f"campaign={campaign}", f"kind={args.kind}", f"smoke={args.smoke}", f"run_count={len(runs)}"]
-    manifest: list[dict[str, object]] = []
-    BASE_PORT = 29700
-    for run_idx, run in enumerate(runs):
-        rendered_args = tuple(campaign if arg == "{campaign}" else arg for arg in run.args)
-        # Assign unique port per run to avoid conflicts between consecutive spawned workers
-        unique_port = BASE_PORT + run_idx
-        rendered_args = rendered_args + ("--master-port", str(unique_port))
-        command = [sys.executable, "-m", run.module, *rendered_args]
-        command_str = shlex.join(command)
-        log_file = log_dir / f"{run.name}.log"
-        entry = {"name": run.name, "command": command, "command_str": command_str, "log_file": str(log_file), "status": "planned"}
-        orchestrator_lines.append(f"planned {run.name}: {command_str}")
-        if args.execute:
-            with log_file.open("w") as handle:
-                completed = subprocess.run(command, stdout=handle, stderr=subprocess.STDOUT, text=True)
-            entry["return_code"] = completed.returncode
-            entry["status"] = "completed" if completed.returncode == 0 else "failed"
-            orchestrator_lines.append(f"finished {run.name}: return_code={completed.returncode}")
-        manifest.append(entry)
-
-    (log_dir / "orchestrator.log").write_text("\n".join(orchestrator_lines) + "\n")
-    manifest_path = analysis_dir / "campaign_manifest.json"
-    manifest_path.write_text(json.dumps(manifest, indent=2))
+    _manifest, manifest_path = execute_runs(
+        runs=runs,
+        campaign=campaign,
+        log_dir=log_dir,
+        analysis_dir=analysis_dir,
+        execute=args.execute,
+        # Unique port per run to avoid conflicts between consecutive spawned workers.
+        header_lines=[f"campaign={campaign}", f"kind={args.kind}", f"smoke={args.smoke}", f"run_count={len(runs)}"],
+        base_port=29700,
+    )
     return {
         "campaign": campaign,
         "kind": args.kind,

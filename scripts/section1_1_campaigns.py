@@ -8,6 +8,8 @@ import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from scripts.campaign_utils import ensure_layout as _ensure_layout
+
 
 @dataclass(frozen=True)
 class CampaignRun:
@@ -151,13 +153,7 @@ def build_runs(kind: str, smoke: bool, batch_size: int) -> list[CampaignRun]:
 
 
 def ensure_layout(kind: str, campaign: str) -> tuple[Path, Path, Path]:
-    log_dir = Path("logs") / "section1_1" / campaign
-    data_dir = Path("data") / "section1_1" / campaign
-    analysis_dir = Path("data") / "section1_1" / "analysis" / campaign
-    log_dir.mkdir(parents=True, exist_ok=True)
-    data_dir.mkdir(parents=True, exist_ok=True)
-    analysis_dir.mkdir(parents=True, exist_ok=True)
-    return log_dir, data_dir, analysis_dir
+    return _ensure_layout("section1_1", campaign)
 
 
 def build_section_command(run: CampaignRun, campaign: str, output_root: str, device: str, vram_limit_gb: float) -> list[str]:

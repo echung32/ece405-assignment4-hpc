@@ -2,30 +2,15 @@ from __future__ import annotations
 
 import argparse
 import json
-import shlex
-import subprocess
-import sys
-from dataclasses import dataclass
 from pathlib import Path
 
+from scripts.campaign_utils import CampaignRun, ensure_layout, execute_runs
 
-@dataclass(frozen=True)
-class CampaignRun:
-    name: str
-    area: str
-    module: str
-    args: tuple[str, ...]
-
-
-def ensure_layout(area: str, campaign: str) -> tuple[Path, Path, Path]:
-    log_dir = Path("logs") / area / campaign
-    data_dir = Path("data") / area / campaign
-    analysis_dir = Path("data") / area / "analysis" / campaign
-    log_dir.mkdir(parents=True, exist_ok=True)
-    data_dir.mkdir(parents=True, exist_ok=True)
-    analysis_dir.mkdir(parents=True, exist_ok=True)
-    return log_dir, data_dir, analysis_dir
-
+_AREA_FOR_KIND: dict[str, str] = {
+    "attention": "section1_2",
+    "model-compile": "section1_3",
+    "flash": "section1_3",
+}
 
 def build_attention_runs(smoke: bool, device: str) -> list[CampaignRun]:
     common_args = (
@@ -40,19 +25,16 @@ def build_attention_runs(smoke: bool, device: str) -> list[CampaignRun]:
         return [
             CampaignRun(
                 name="naive_smoke",
-                area="section1_2",
                 module="cs336_systems.section1.pytorch_attention",
                 args=("--implementation", "naive", "--smoke", *common_args),
             ),
             CampaignRun(
                 name="compiled_naive_smoke",
-                area="section1_2",
                 module="cs336_systems.section1.pytorch_attention",
                 args=("--implementation", "compiled_naive", "--smoke", *common_args),
             ),
             CampaignRun(
                 name="flash_triton_smoke",
-                area="section1_2",
                 module="cs336_systems.section1.pytorch_attention",
                 args=("--implementation", "flash_triton", "--smoke", *common_args),
             ),
@@ -61,25 +43,21 @@ def build_attention_runs(smoke: bool, device: str) -> list[CampaignRun]:
     return [
         CampaignRun(
             name="naive_fp32",
-            area="section1_2",
             module="cs336_systems.section1.pytorch_attention",
             args=("--implementation", "naive", *common_args),
         ),
         CampaignRun(
             name="compiled_naive_fp32",
-            area="section1_2",
             module="cs336_systems.section1.pytorch_attention",
             args=("--implementation", "compiled_naive", *common_args),
         ),
         CampaignRun(
             name="flash_pytorch_fp32",
-            area="section1_2",
             module="cs336_systems.section1.pytorch_attention",
             args=("--implementation", "flash_pytorch", *common_args),
         ),
         CampaignRun(
             name="flash_triton_fp32",
-            area="section1_2",
             module="cs336_systems.section1.pytorch_attention",
             args=("--implementation", "flash_triton", *common_args),
         ),
@@ -104,7 +82,6 @@ def build_model_compile_runs(smoke: bool, device: str) -> list[CampaignRun]:
             runs.append(
                 CampaignRun(
                     name=f"{model_size}_{mode}_eager",
-                    area="section1_3",
                     module="cs336_systems.section1.torch_compile",
                     args=("--model-size", model_size, "--mode", mode, *smoke_flag, *common_prefix),
                 )
@@ -112,7 +89,6 @@ def build_model_compile_runs(smoke: bool, device: str) -> list[CampaignRun]:
             runs.append(
                 CampaignRun(
                     name=f"{model_size}_{mode}_compiled",
-                    area="section1_3",
                     module="cs336_systems.section1.torch_compile",
                     args=("--model-size", model_size, "--mode", mode, "--compiled", *smoke_flag, *common_prefix),
                 )
@@ -139,7 +115,6 @@ def build_flash_runs(smoke: bool, device: str) -> list[CampaignRun]:
             runs.append(
                 CampaignRun(
                     name=f"{implementation}_{dtype}",
-                    area="section1_3",
                     module="cs336_systems.section1.flash_benchmark",
                     args=("--implementation", implementation, "--dtype", dtype, *smoke_flag, *common_prefix),
                 )
@@ -159,28 +134,25 @@ def build_runs(kind: str, smoke: bool, device: str) -> list[CampaignRun]:
 
 def run_campaign(args: argparse.Namespace) -> dict[str, object]:
     runs = build_runs(args.kind, smoke=args.smoke, device=args.device)
-    area = runs[0].area
+    area = _AREA_FOR_KIND[args.kind]
     campaign = args.campaign or f"assignment_{args.kind}_{'smoke' if args.smoke else 'full'}"
     log_dir, data_dir, analysis_dir = ensure_layout(area, campaign)
 
-    plan_payload = {
-        "kind": args.kind,
-        "campaign": campaign,
-        "device": args.device,
-        "smoke": args.smoke,
-        "runs": [
+    (analysis_dir / "run_plan.json").write_text(
+        json.dumps(
             {
-                "name": run.name,
-                "area": run.area,
-                "module": run.module,
-                "args": list(run.args),
-            }
-            for run in runs
-        ],
-    }
-    (analysis_dir / "run_plan.json").write_text(json.dumps(plan_payload, indent=2))
+                "kind": args.kind,
+                "campaign": campaign,
+                "area": area,
+                "device": args.device,
+                "smoke": args.smoke,
+                "runs": [{"name": run.name, "module": run.module, "args": list(run.args)} for run in runs],
+            },
+            indent=2,
+        )
+    )
 
-    orchestrator_lines = [
+    header_lines = [
         f"campaign={campaign}",
         f"kind={args.kind}",
         f"area={area}",
@@ -188,33 +160,14 @@ def run_campaign(args: argparse.Namespace) -> dict[str, object]:
         f"smoke={args.smoke}",
         f"run_count={len(runs)}",
     ]
-    manifest: list[dict[str, object]] = []
-
-    for run in runs:
-        rendered_args = tuple(campaign if arg == "{campaign}" else arg for arg in run.args)
-        command = [sys.executable, "-m", run.module, *rendered_args]
-        command_str = shlex.join(command)
-        log_file = log_dir / f"{run.name}.log"
-        entry = {
-            "name": run.name,
-            "command": command,
-            "command_str": command_str,
-            "log_file": str(log_file),
-            "status": "planned",
-        }
-        orchestrator_lines.append(f"planned {run.name}: {command_str}")
-
-        if args.execute:
-            with log_file.open("w") as handle:
-                completed = subprocess.run(command, stdout=handle, stderr=subprocess.STDOUT, text=True)
-            entry["return_code"] = completed.returncode
-            entry["status"] = "completed" if completed.returncode == 0 else "failed"
-            orchestrator_lines.append(f"finished {run.name}: return_code={completed.returncode}")
-        manifest.append(entry)
-
-    (log_dir / "orchestrator.log").write_text("\n".join(orchestrator_lines) + "\n")
-    manifest_path = analysis_dir / "campaign_manifest.json"
-    manifest_path.write_text(json.dumps(manifest, indent=2))
+    _manifest, manifest_path = execute_runs(
+        runs=runs,
+        campaign=campaign,
+        log_dir=log_dir,
+        analysis_dir=analysis_dir,
+        execute=args.execute,
+        header_lines=header_lines,
+    )
 
     return {
         "campaign": campaign,
