@@ -1,0 +1,762 @@
+[
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.006682434895386298,
+    "backward_ms": 0.4030937990924052,
+    "end_to_end_ms": 0.4757312141160411
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.030750023102145366,
+    "backward_ms": 1.424074665043089,
+    "end_to_end_ms": 1.4719253338045544
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.03737431463791699,
+    "backward_ms": 4.954350392023723,
+    "end_to_end_ms": 5.301967655740133
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.09230456008895327,
+    "backward_ms": 19.810645209418404,
+    "end_to_end_ms": 19.779342227511936
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.026343776162145047,
+    "backward_ms": 83.72039794921875,
+    "end_to_end_ms": 78.72499084472656
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.317460120811129,
+    "backward_ms": 311.0190734863281,
+    "end_to_end_ms": 325.9450378417969
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.37617279809102955,
+    "backward_ms": 1268.123291015625,
+    "end_to_end_ms": 1274.0152587890625
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.0566473166321138,
+    "backward_ms": 2855.80908203125,
+    "end_to_end_ms": 3957.820068359375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 2.337864932193551,
+    "backward_ms": 15875.8193359375,
+    "end_to_end_ms": 15819.0546875
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 7.759364190308944,
+    "backward_ms": 63191.109375,
+    "end_to_end_ms": 61782.00390625
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.020107940395548324,
+    "backward_ms": 0.33921044866184585,
+    "end_to_end_ms": 0.326758031047979
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.009896257187808753,
+    "backward_ms": 1.096127566837129,
+    "end_to_end_ms": 0.9968439004308468
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.08425105785880285,
+    "backward_ms": 3.9334686304393567,
+    "end_to_end_ms": 3.865490065466973
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.1000728069038122,
+    "backward_ms": 14.826350798973671,
+    "end_to_end_ms": 15.392180269414728
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.17510455206992867,
+    "backward_ms": 62.182411193847656,
+    "end_to_end_ms": 62.257738749186196
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.20043690698842206,
+    "backward_ms": 238.4503936767578,
+    "end_to_end_ms": 255.0298614501953
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.49975793576391225,
+    "backward_ms": 991.950439453125,
+    "end_to_end_ms": 990.6470336914062
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.3113768310458571,
+    "backward_ms": 3955.5498046875,
+    "end_to_end_ms": 3961.497802734375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 3.547828680735368,
+    "backward_ms": 13407.2109375,
+    "end_to_end_ms": 13412.2099609375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 10.597456004884508,
+    "backward_ms": 42547.93359375,
+    "end_to_end_ms": 45618.7578125
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.011190796648113689,
+    "backward_ms": 0.23193401688975948,
+    "end_to_end_ms": 0.199517796629396
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.062061033863415875,
+    "backward_ms": 0.7208676728847865,
+    "end_to_end_ms": 0.7876352876016538
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.0447464639496145,
+    "backward_ms": 3.0283549949526787,
+    "end_to_end_ms": 3.0092181865483116
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.11594290536194629,
+    "backward_ms": 12.118056933085123,
+    "end_to_end_ms": 11.744445664542061
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.14826656745719738,
+    "backward_ms": 45.46442413330078,
+    "end_to_end_ms": 46.44327926635742
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.23368511544278517,
+    "backward_ms": 185.91510009765625,
+    "end_to_end_ms": 194.79714965820312
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.49003435684242114,
+    "backward_ms": 758.61669921875,
+    "end_to_end_ms": 754.7112426757812
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.5140397684615956,
+    "backward_ms": 3017.8447265625,
+    "end_to_end_ms": 3029.56494140625
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 4.704699692817835,
+    "backward_ms": 12108.951171875,
+    "end_to_end_ms": 12115.23828125
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 15.219058752059937,
+    "backward_ms": 48448.1640625,
+    "end_to_end_ms": 47286.5859375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.02324061544789593,
+    "backward_ms": 0.20722986411447952,
+    "end_to_end_ms": 0.2118224709561676
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.036921637918841614,
+    "backward_ms": 0.8625041686255356,
+    "end_to_end_ms": 0.8756028898060322
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.06257973853815531,
+    "backward_ms": 3.169140124320984,
+    "end_to_end_ms": 3.4174693301320076
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.10319660790447398,
+    "backward_ms": 11.539545631408691,
+    "end_to_end_ms": 12.753498470082002
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.22880358076292903,
+    "backward_ms": 50.389583587646484,
+    "end_to_end_ms": 50.759029388427734
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.399887202479475,
+    "backward_ms": 195.12176513671875,
+    "end_to_end_ms": 201.5037384033203
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.029954525200944,
+    "backward_ms": 796.8712768554688,
+    "end_to_end_ms": 799.7979125976562
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 3.1631810311917907,
+    "backward_ms": 3202.86376953125,
+    "end_to_end_ms": 3204.0771484375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 11.343896360958324,
+    "backward_ms": 12811.466796875,
+    "end_to_end_ms": 12848.037109375
+  },
+  {
+    "config": {
+      "implementation": "flash_triton",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 41.183743476867676,
+    "backward_ms": 49044.390625,
+    "end_to_end_ms": 56443.01953125
+  }
+]

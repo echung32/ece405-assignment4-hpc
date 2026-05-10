@@ -1,0 +1,18 @@
+campaign=assignment_section2_ddp_full
+kind=ddp
+smoke=False
+run_count=7
+planned ddp_naive_xl: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation naive --backend nccl --device-type cuda --world-size 2 --model-size xl --campaign assignment_section2_ddp_full --master-port 29700
+finished ddp_naive_xl: return_code=0
+planned ddp_flat_xl: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation flat --backend nccl --device-type cuda --world-size 2 --model-size xl --campaign assignment_section2_ddp_full --master-port 29701
+finished ddp_flat_xl: return_code=0
+planned ddp_overlap_individual_xl: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation overlap_individual --backend nccl --device-type cuda --world-size 2 --model-size xl --campaign assignment_section2_ddp_full --master-port 29702
+finished ddp_overlap_individual_xl: return_code=0
+planned ddp_overlap_bucketed_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation overlap_bucketed --backend nccl --device-type cuda --world-size 2 --model-size xl --bucket-size-mb 1 --campaign assignment_section2_ddp_full --master-port 29703
+finished ddp_overlap_bucketed_1mb: return_code=0
+planned ddp_overlap_bucketed_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation overlap_bucketed --backend nccl --device-type cuda --world-size 2 --model-size xl --bucket-size-mb 10 --campaign assignment_section2_ddp_full --master-port 29704
+finished ddp_overlap_bucketed_10mb: return_code=0
+planned ddp_overlap_bucketed_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation overlap_bucketed --backend nccl --device-type cuda --world-size 2 --model-size xl --bucket-size-mb 100 --campaign assignment_section2_ddp_full --master-port 29705
+finished ddp_overlap_bucketed_100mb: return_code=0
+planned ddp_overlap_bucketed_1000mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks ddp --implementation overlap_bucketed --backend nccl --device-type cuda --world-size 2 --model-size xl --bucket-size-mb 1000 --campaign assignment_section2_ddp_full --master-port 29706
+finished ddp_overlap_bucketed_1000mb: return_code=0

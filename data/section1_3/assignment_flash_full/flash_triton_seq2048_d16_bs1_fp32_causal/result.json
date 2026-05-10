@@ -1,0 +1,19 @@
+{
+  "config": {
+    "implementation": "flash_triton",
+    "batch_size": 1,
+    "d_model": 16,
+    "sequence_length": 2048,
+    "warmup_ms": 100,
+    "rep_ms": 200,
+    "device": "cuda:0",
+    "dtype": "fp32",
+    "is_causal": true,
+    "campaign": "assignment_flash_full",
+    "output_root": "data/section1_3"
+  },
+  "status": "ok",
+  "forward_ms": 0.026343776162145047,
+  "backward_ms": 83.72039794921875,
+  "end_to_end_ms": 78.72499084472656
+}

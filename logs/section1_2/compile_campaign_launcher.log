@@ -1,0 +1,11 @@
+{
+  "campaign": "assignment_model-compile_full",
+  "kind": "model-compile",
+  "area": "section1_3",
+  "log_dir": "logs/section1_3/assignment_model-compile_full",
+  "data_dir": "data/section1_3/assignment_model-compile_full",
+  "analysis_dir": "data/section1_3/analysis/assignment_model-compile_full",
+  "manifest_path": "data/section1_3/analysis/assignment_model-compile_full/campaign_manifest.json",
+  "run_count": 30,
+  "executed": true
+}

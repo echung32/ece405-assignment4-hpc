@@ -1,0 +1,15 @@
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 4,
+    "size_mb": 1,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 29716,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "skipped",
+  "error": "Requested world_size=4 CUDA ranks but only found 2 GPUs"
+}

@@ -1,0 +1,10 @@
+{
+  "campaign": "assignment_section3_timing_full",
+  "kind": "timing",
+  "log_dir": "logs/section3/assignment_section3_timing_full",
+  "data_dir": "data/section3/assignment_section3_timing_full",
+  "analysis_dir": "data/section3/analysis/assignment_section3_timing_full",
+  "manifest_path": "data/section3/analysis/assignment_section3_timing_full/campaign_manifest.json",
+  "run_count": 2,
+  "executed": true
+}

@@ -1,0 +1,37 @@
+{
+  "config": {
+    "mode": "timing",
+    "optimizer_impl": "standard",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 3,
+    "measure_steps": 5,
+    "bucket_size_mb": 25.0,
+    "master_port": 29800,
+    "campaign": "assignment_section3_timing_full",
+    "output_root": "data/section3"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "timings_seconds": [
+    1.928958953008987,
+    1.8643448580405675,
+    1.9527836699853651,
+    1.855996453028638,
+    1.9424061499885283
+  ],
+  "mean_seconds": 1.9088980168104173,
+  "stdev_seconds": 0.04537275094086217,
+  "min_seconds": 1.855996453028638,
+  "max_seconds": 1.9527836699853651
+}

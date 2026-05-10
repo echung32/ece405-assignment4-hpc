@@ -1,0 +1,45 @@
+{
+  "kind": "timing",
+  "campaign": "assignment_section3_timing_full",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "timing_standard",
+      "module": "cs336_systems.section3.benchmarks",
+      "args": [
+        "timing",
+        "--optimizer-impl",
+        "standard",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "timing_sharded",
+      "module": "cs336_systems.section3.benchmarks",
+      "args": [
+        "timing",
+        "--optimizer-impl",
+        "sharded",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    }
+  ]
+}

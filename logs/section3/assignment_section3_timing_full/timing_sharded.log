@@ -1,0 +1,39 @@
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "mode": "timing",
+    "optimizer_impl": "sharded",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 3,
+    "measure_steps": 5,
+    "bucket_size_mb": 25.0,
+    "master_port": 29801,
+    "campaign": "assignment_section3_timing_full",
+    "output_root": "data/section3"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "timings_seconds": [
+    2.692025778000243,
+    2.6699776930036023,
+    2.69937594095245,
+    2.696966012008488,
+    2.738121828006115
+  ],
+  "mean_seconds": 2.6992934503941797,
+  "stdev_seconds": 0.024623664306491832,
+  "min_seconds": 2.6699776930036023,
+  "max_seconds": 2.738121828006115
+}

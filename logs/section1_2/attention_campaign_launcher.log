@@ -1,0 +1,11 @@
+{
+  "campaign": "assignment_attention_full",
+  "kind": "attention",
+  "area": "section1_2",
+  "log_dir": "logs/section1_2/assignment_attention_full",
+  "data_dir": "data/section1_2/assignment_attention_full",
+  "analysis_dir": "data/section1_2/analysis/assignment_attention_full",
+  "manifest_path": "data/section1_2/analysis/assignment_attention_full/campaign_manifest.json",
+  "run_count": 4,
+  "executed": true
+}

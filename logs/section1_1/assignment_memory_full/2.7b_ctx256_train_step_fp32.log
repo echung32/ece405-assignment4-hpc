@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model_size": "2.7b",
+    "context_length": 256,
+    "batch_size": 1,
+    "mode": "train_step",
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "precision": "fp32",
+    "device": "cuda:1",
+    "seed": 0,
+    "vram_limit_gb": 85.0,
+    "profile_memory": true,
+    "annotate_attention": false,
+    "campaign": "assignment_memory_full",
+    "output_root": "data/section1_1"
+  },
+  "model_spec": {
+    "name": "2.7b",
+    "d_model": 2560,
+    "d_ff": 10240,
+    "num_layers": 32,
+    "num_heads": 32
+  },
+  "timings_seconds": [
+    0.8333792960038409,
+    0.8187788769719191,
+    0.8381337909959257,
+    0.8369167490163818,
+    0.8378036720096134,
+    0.8379857540130615,
+    0.8369200949673541,
+    0.8391076669795439,
+    0.8381385810207576,
+    0.8388831869815476
+  ],
+  "mean_seconds": 0.8356047668959945,
+  "stdev_seconds": 0.006126930398461787,
+  "peak_reserved_bytes": 58913193984,
+  "peak_reserved_gb": 54.8671875,
+  "peak_device_used_bytes": 58913193984,
+  "peak_device_used_gb": 54.8671875,
+  "snapshot_path": "data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_train_step_fp32/memory_snapshot.pickle",
+  "parameter_count": 3406809600,
+  "loss": 5.504982948303223
+}

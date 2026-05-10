@@ -1,0 +1,13 @@
+config_model_size,config_context_length,config_batch_size,config_mode,config_precision,mean_seconds,stdev_seconds,peak_reserved_gb,peak_device_used_gb,snapshot_path
+2.7b,128,1,forward,bf16,0.09505427698604763,0.0,19.333984375,19.333984375,data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_forward_bf16/memory_snapshot.pickle
+2.7b,128,1,forward,fp32,0.16033934100414626,0.0,12.859375,12.859375,data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_forward_fp32/memory_snapshot.pickle
+2.7b,128,1,train_step,bf16,1.397170374984853,0.0,58.91796875,58.91796875,data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_train_step_bf16/memory_snapshot.pickle
+2.7b,128,1,train_step,fp32,1.1217914400040172,0.0,53.232421875,53.232421875,data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_train_step_fp32/memory_snapshot.pickle
+2.7b,256,1,forward,bf16,0.1296431889932137,0.0,19.517578125,19.517578125,data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_forward_bf16/memory_snapshot.pickle
+2.7b,256,1,forward,fp32,0.3081586840271484,0.0,12.896484375,12.896484375,data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_forward_fp32/memory_snapshot.pickle
+2.7b,256,1,train_step,bf16,1.406338909000624,0.0,60.103515625,60.103515625,data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_train_step_bf16/memory_snapshot.pickle
+2.7b,256,1,train_step,fp32,0.8356047668959945,0.006126930398461787,54.8671875,54.8671875,data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_train_step_fp32/memory_snapshot.pickle
+2.7b,512,1,forward,bf16,0.1512269730155822,0.0,19.654296875,19.654296875,data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_forward_bf16/memory_snapshot.pickle
+2.7b,512,1,forward,fp32,0.4192655829829164,0.0,13.001953125,13.001953125,data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_forward_fp32/memory_snapshot.pickle
+2.7b,512,1,train_step,bf16,1.5954428389959503,0.0,62.486328125,62.486328125,data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_train_step_bf16/memory_snapshot.pickle
+2.7b,512,1,train_step,fp32,2.8503429269767366,0.0,54.55078125,54.55078125,data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_train_step_fp32/memory_snapshot.pickle

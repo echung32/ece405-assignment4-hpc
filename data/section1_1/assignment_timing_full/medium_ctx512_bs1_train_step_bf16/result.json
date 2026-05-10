@@ -1,0 +1,46 @@
+{
+  "config": {
+    "model_size": "medium",
+    "context_length": 512,
+    "batch_size": 1,
+    "mode": "train_step",
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "precision": "bf16",
+    "device": "cuda:1",
+    "seed": 0,
+    "vram_limit_gb": 80.0,
+    "profile_memory": false,
+    "annotate_attention": false,
+    "campaign": "assignment_timing_full",
+    "output_root": "data/section1_1"
+  },
+  "model_spec": {
+    "name": "medium",
+    "d_model": 1024,
+    "d_ff": 4096,
+    "num_layers": 24,
+    "num_heads": 16
+  },
+  "timings_seconds": [
+    0.10877625897410326,
+    0.10687245900044218,
+    0.1086504329869058,
+    0.1064965330006089,
+    0.10736690601333976,
+    0.10752884999965318,
+    0.10747682198416442,
+    0.10699640199891292,
+    0.10678790000383742,
+    0.10751102599897422
+  ],
+  "mean_seconds": 0.1074463589960942,
+  "stdev_seconds": 0.0007530837089669741,
+  "peak_reserved_bytes": 8772386816,
+  "peak_reserved_gb": 8.169921875,
+  "peak_device_used_bytes": 8772386816,
+  "peak_device_used_gb": 8.169921875,
+  "snapshot_path": null,
+  "parameter_count": 423183360,
+  "loss": 6.662278175354004
+}

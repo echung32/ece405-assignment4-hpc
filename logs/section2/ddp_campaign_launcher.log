@@ -1,0 +1,10 @@
+{
+  "campaign": "assignment_section2_ddp_full",
+  "kind": "ddp",
+  "log_dir": "logs/section2/assignment_section2_ddp_full",
+  "data_dir": "data/section2/assignment_section2_ddp_full",
+  "analysis_dir": "data/section2/analysis/assignment_section2_ddp_full",
+  "manifest_path": "data/section2/analysis/assignment_section2_ddp_full/campaign_manifest.json",
+  "run_count": 7,
+  "executed": true
+}

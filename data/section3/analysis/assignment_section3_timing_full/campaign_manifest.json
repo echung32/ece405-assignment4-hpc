@@ -1,0 +1,56 @@
+[
+  {
+    "name": "timing_standard",
+    "command": [
+      "/home/ethan/github/ece405-assignment4-hpc/.venv/bin/python",
+      "-m",
+      "cs336_systems.section3.benchmarks",
+      "timing",
+      "--optimizer-impl",
+      "standard",
+      "--backend",
+      "nccl",
+      "--device-type",
+      "cuda",
+      "--world-size",
+      "2",
+      "--model-size",
+      "xl",
+      "--campaign",
+      "assignment_section3_timing_full",
+      "--master-port",
+      "29800"
+    ],
+    "command_str": "/home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section3.benchmarks timing --optimizer-impl standard --backend nccl --device-type cuda --world-size 2 --model-size xl --campaign assignment_section3_timing_full --master-port 29800",
+    "log_file": "logs/section3/assignment_section3_timing_full/timing_standard.log",
+    "status": "completed",
+    "return_code": 0
+  },
+  {
+    "name": "timing_sharded",
+    "command": [
+      "/home/ethan/github/ece405-assignment4-hpc/.venv/bin/python",
+      "-m",
+      "cs336_systems.section3.benchmarks",
+      "timing",
+      "--optimizer-impl",
+      "sharded",
+      "--backend",
+      "nccl",
+      "--device-type",
+      "cuda",
+      "--world-size",
+      "2",
+      "--model-size",
+      "xl",
+      "--campaign",
+      "assignment_section3_timing_full",
+      "--master-port",
+      "29801"
+    ],
+    "command_str": "/home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section3.benchmarks timing --optimizer-impl sharded --backend nccl --device-type cuda --world-size 2 --model-size xl --campaign assignment_section3_timing_full --master-port 29801",
+    "log_file": "logs/section3/assignment_section3_timing_full/timing_sharded.log",
+    "status": "completed",
+    "return_code": 0
+  }
+]

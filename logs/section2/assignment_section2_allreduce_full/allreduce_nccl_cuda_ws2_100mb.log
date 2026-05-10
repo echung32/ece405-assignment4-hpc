@@ -1,0 +1,112 @@
+[rank0]:[E504 22:50:10.396143470 ProcessGroupNCCL.cpp:689] [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+[rank0]:[E504 22:50:10.396286558 ProcessGroupNCCL.cpp:2303] [PG ID 0 PG GUID 0(default_pg) Rank 0]  failure detected by watchdog at work sequence id: 1 PG status: last enqueued work: 1, last completed work: -1
+[rank0]:[E504 22:50:10.396496201 ProcessGroupNCCL.cpp:733] Stack trace of the failed collective: 
+#0 all_reduce from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py:3068
+#1 wrapper from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83
+#2 _allreduce_worker from /home/ethan/github/ece405-assignment4-hpc/cs336_systems/section2/benchmarks.py:89
+#3 _wrap from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:87
+#4 run from /usr/lib/python3.12/multiprocessing/process.py:108
+#5 _bootstrap from /usr/lib/python3.12/multiprocessing/process.py:314
+#6 _main from /usr/lib/python3.12/multiprocessing/spawn.py:135
+#7 spawn_main from /usr/lib/python3.12/multiprocessing/spawn.py:122
+#8 <module> from <string>:1
+
+[rank0]:[E504 22:50:10.396553038 ProcessGroupNCCL.cpp:2636] [PG ID 0 PG GUID 0(default_pg) Rank 0] First PG on this rank to signal dumping.
+[rank1]:[E504 22:50:10.404031932 ProcessGroupNCCL.cpp:689] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600021 milliseconds before timing out.
+[rank1]:[E504 22:50:10.404115760 ProcessGroupNCCL.cpp:2303] [PG ID 0 PG GUID 0(default_pg) Rank 1]  failure detected by watchdog at work sequence id: 1 PG status: last enqueued work: 1, last completed work: -1
+[rank1]:[E504 22:50:10.404296699 ProcessGroupNCCL.cpp:733] Stack trace of the failed collective: 
+#0 all_reduce from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py:3068
+#1 wrapper from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83
+#2 _allreduce_worker from /home/ethan/github/ece405-assignment4-hpc/cs336_systems/section2/benchmarks.py:89
+#3 _wrap from /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:87
+#4 run from /usr/lib/python3.12/multiprocessing/process.py:108
+#5 _bootstrap from /usr/lib/python3.12/multiprocessing/process.py:314
+#6 _main from /usr/lib/python3.12/multiprocessing/spawn.py:135
+#7 spawn_main from /usr/lib/python3.12/multiprocessing/spawn.py:122
+#8 <module> from <string>:1
+
+[rank1]:[E504 22:50:10.404332887 ProcessGroupNCCL.cpp:2636] [PG ID 0 PG GUID 0(default_pg) Rank 1] First PG on this rank to signal dumping.
+[rank1]:[E504 22:50:10.030079216 ProcessGroupNCCL.cpp:1914] [PG ID 0 PG GUID 0(default_pg) Rank 1] Received a dump signal due to a collective timeout from this local rank and we will try our best to dump the debug info. Last enqueued NCCL work: 1, last completed NCCL work: -1.This is most likely caused by incorrect usages of collectives, e.g., wrong sizes used across ranks, the order of collectives is not same for all ranks or the scheduled collective, for some reason, didn't run. Additionally, this can be caused by GIL deadlock or other reasons such as network errors or bugs in the communications library (e.g. NCCL), etc. 
+[rank0]:[E504 22:50:10.030097440 ProcessGroupNCCL.cpp:1914] [PG ID 0 PG GUID 0(default_pg) Rank 0] Received a dump signal due to a collective timeout from this local rank and we will try our best to dump the debug info. Last enqueued NCCL work: 1, last completed NCCL work: -1.This is most likely caused by incorrect usages of collectives, e.g., wrong sizes used across ranks, the order of collectives is not same for all ranks or the scheduled collective, for some reason, didn't run. Additionally, this can be caused by GIL deadlock or other reasons such as network errors or bugs in the communications library (e.g. NCCL), etc. 
+[rank1]:[E504 22:50:10.030194512 ProcessGroupNCCL.cpp:1628] [PG ID 0 PG GUID 0(default_pg) Rank 1] ProcessGroupNCCL preparing to dump debug info. Include stack trace: 1, only active collectives: 0
+[rank0]:[E504 22:50:10.030222685 ProcessGroupNCCL.cpp:1628] [PG ID 0 PG GUID 0(default_pg) Rank 0] ProcessGroupNCCL preparing to dump debug info. Include stack trace: 1, only active collectives: 0
+[rank0]:[E504 22:51:10.396635625 ProcessGroupNCCL.cpp:750] [Rank 0] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank0]:[E504 22:51:10.396680889 ProcessGroupNCCL.cpp:764] [Rank 0] To avoid data inconsistency, we are taking the entire process down.
+[rank0]:[E504 22:51:10.397081801 ProcessGroupNCCL.cpp:2119] [PG ID 0 PG GUID 0(default_pg) Rank 0] Process group watchdog thread terminated with exception: [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+Exception raised from checkTimeout at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:692 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7f87c7b7305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x2a7 (0x7f8712f02ba7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::Watchdog::runLoop() + 0x17b1 (0x7f8712f07fc1 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::Watchdog::run() + 0x157 (0x7f8712f093b7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xecdb4 (0x7f8797aecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #5: <unknown function> + 0x9caa4 (0x7f87c929caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x129c6c (0x7f87c9329c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG ID 0 PG GUID 0(default_pg) Rank 0] Process group watchdog thread terminated with exception: [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600013 milliseconds before timing out.
+Exception raised from checkTimeout at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:692 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7f87c7b7305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x2a7 (0x7f8712f02ba7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::Watchdog::runLoop() + 0x17b1 (0x7f8712f07fc1 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::Watchdog::run() + 0x157 (0x7f8712f093b7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xecdb4 (0x7f8797aecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #5: <unknown function> + 0x9caa4 (0x7f87c929caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x129c6c (0x7f87c9329c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+Exception raised from run at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:2125 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7f87c7b7305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x68ef03 (0x7f871268ef03 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xecdb4 (0x7f8797aecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #3: <unknown function> + 0x9caa4 (0x7f87c929caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #4: <unknown function> + 0x129c6c (0x7f87c9329c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+[rank1]:[E504 22:51:10.404413289 ProcessGroupNCCL.cpp:750] [Rank 1] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E504 22:51:10.404448926 ProcessGroupNCCL.cpp:764] [Rank 1] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E504 22:51:10.404832916 ProcessGroupNCCL.cpp:2119] [PG ID 0 PG GUID 0(default_pg) Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600021 milliseconds before timing out.
+Exception raised from checkTimeout at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:692 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7837fd77305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x2a7 (0x783748f02ba7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::Watchdog::runLoop() + 0x17b1 (0x783748f07fc1 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::Watchdog::run() + 0x157 (0x783748f093b7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xecdb4 (0x7837cdaecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #5: <unknown function> + 0x9caa4 (0x7837ff09caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x129c6c (0x7837ff129c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+terminate called after throwing an instance of 'c10::DistBackendError'
+  what():  [PG ID 0 PG GUID 0(default_pg) Rank 1] Process group watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1, OpType=ALLREDUCE, NumelIn=26214400, NumelOut=26214400, Timeout(ms)=600000) ran for 600021 milliseconds before timing out.
+Exception raised from checkTimeout at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:692 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7837fd77305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x2a7 (0x783748f02ba7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::Watchdog::runLoop() + 0x17b1 (0x783748f07fc1 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::Watchdog::run() + 0x157 (0x783748f093b7 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xecdb4 (0x7837cdaecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #5: <unknown function> + 0x9caa4 (0x7837ff09caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #6: <unknown function> + 0x129c6c (0x7837ff129c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+Exception raised from run at /pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:2125 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) + 0x9d (0x7837fd77305d in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x68ef03 (0x78374868ef03 in /home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: <unknown function> + 0xecdb4 (0x7837cdaecdb4 in /lib/x86_64-linux-gnu/libstdc++.so.6)
+frame #3: <unknown function> + 0x9caa4 (0x7837ff09caa4 in /lib/x86_64-linux-gnu/libc.so.6)
+frame #4: <unknown function> + 0x129c6c (0x7837ff129c6c in /lib/x86_64-linux-gnu/libc.so.6)
+
+W0504 22:51:11.340000 3120112 .venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py:165] Terminating process 3120170 via signal SIGTERM
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/ethan/github/ece405-assignment4-hpc/cs336_systems/section2/benchmarks.py", line 323, in <module>
+    main()
+  File "/home/ethan/github/ece405-assignment4-hpc/cs336_systems/section2/benchmarks.py", line 288, in main
+    result = run_allreduce(
+             ^^^^^^^^^^^^^^
+  File "/home/ethan/github/ece405-assignment4-hpc/cs336_systems/section2/benchmarks.py", line 125, in run_allreduce
+    mp.spawn(_allreduce_worker, args=(config, str(result_path)), nprocs=config.world_size, join=True)
+  File "/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 340, in spawn
+    return start_processes(fn, args, nprocs, join, daemon, start_method="spawn")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 296, in start_processes
+    while not context.join():
+              ^^^^^^^^^^^^^^
+  File "/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/multiprocessing/spawn.py", line 192, in join
+    raise ProcessExitedException(
+torch.multiprocessing.spawn.ProcessExitedException: process 0 terminated with signal SIGABRT

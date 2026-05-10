@@ -1,0 +1,63 @@
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "implementation": "overlap_bucketed",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "bucket_size_mb": 100.0,
+    "master_port": 29705,
+    "campaign": "assignment_section2_ddp_full",
+    "output_root": "data/section2"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "step_timings_seconds": [
+    1.9080702220089734,
+    1.906947718001902,
+    1.9030893919989467,
+    1.8742461650399491,
+    1.8836030719685368,
+    1.9855736180325039,
+    1.9116755930008367,
+    1.869878626021091,
+    1.9305097720352933,
+    1.8911973230424337
+  ],
+  "communication_timings_seconds": [
+    0.024281302990857512,
+    0.020960845984518528,
+    0.015387184044811875,
+    0.02560287102824077,
+    0.02210127399303019,
+    0.022644192969892174,
+    0.024854697985574603,
+    0.020463263033889234,
+    0.023028303985483944,
+    0.025016051018610597
+  ],
+  "step": {
+    "mean_seconds": 1.9064791501150467,
+    "stdev_seconds": 0.0333501008998188,
+    "min_seconds": 1.869878626021091,
+    "max_seconds": 1.9855736180325039
+  },
+  "communication": {
+    "mean_seconds": 0.022433998703490943,
+    "stdev_seconds": 0.003022153850970048,
+    "min_seconds": 0.015387184044811875,
+    "max_seconds": 0.02560287102824077
+  }
+}

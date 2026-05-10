@@ -1,0 +1,19 @@
+{
+  "config": {
+    "implementation": "naive",
+    "batch_size": 1,
+    "d_model": 128,
+    "sequence_length": 1024,
+    "warmup_ms": 100,
+    "rep_ms": 200,
+    "device": "cuda:0",
+    "dtype": "bf16",
+    "is_causal": true,
+    "campaign": "assignment_flash_full",
+    "output_root": "data/section1_3"
+  },
+  "status": "ok",
+  "forward_ms": 0.13679496187404913,
+  "backward_ms": 0.19831487905270984,
+  "end_to_end_ms": 0.41978312162989445
+}

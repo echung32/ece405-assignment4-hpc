@@ -1,0 +1,39 @@
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:322: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+{
+  "config": {
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "mode": "forward_backward",
+    "compiled": true,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "precision": "fp32",
+    "device": "cuda:1",
+    "campaign": "assignment_model-compile_full",
+    "output_root": "data/section1_3",
+    "vram_limit_gb": 40.0
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "timings_seconds": [
+    0.7513866719964426,
+    0.7497749590256717,
+    0.7486764600034803,
+    0.7379853409947827,
+    0.5510770480032079,
+    0.5415665239852387,
+    0.5275896639795974,
+    0.5472305349831004,
+    0.5278523569868412,
+    0.5425801250094082
+  ],
+  "mean_seconds": 0.6225719684967771,
+  "stdev_seconds": 0.1073614317610343
+}

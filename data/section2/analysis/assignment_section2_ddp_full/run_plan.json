@@ -1,0 +1,148 @@
+{
+  "kind": "ddp",
+  "campaign": "assignment_section2_ddp_full",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "ddp_naive_xl",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "naive",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_flat_xl",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "flat",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_overlap_individual_xl",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "overlap_individual",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_overlap_bucketed_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "overlap_bucketed",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--bucket-size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_overlap_bucketed_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "overlap_bucketed",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--bucket-size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_overlap_bucketed_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "overlap_bucketed",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--bucket-size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "ddp_overlap_bucketed_1000mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "ddp",
+        "--implementation",
+        "overlap_bucketed",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--bucket-size-mb",
+        "1000",
+        "--campaign",
+        "{campaign}"
+      ]
+    }
+  ]
+}

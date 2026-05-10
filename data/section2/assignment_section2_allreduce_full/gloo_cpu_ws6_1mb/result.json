@@ -1,0 +1,30 @@
+{
+  "config": {
+    "backend": "gloo",
+    "device_type": "cpu",
+    "world_size": 6,
+    "size_mb": 1,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 29708,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.0016529489657841623,
+    0.0021910889772698283,
+    0.0029520359821617603,
+    0.0016431920230388641,
+    0.0023931979667395353,
+    0.00213030498707667,
+    0.0019551660516299307,
+    0.001894543005619198,
+    0.002279474982060492,
+    0.0022841040045022964
+  ],
+  "mean_seconds": 0.002137605694588274,
+  "stdev_seconds": 0.0003865556208036844,
+  "min_seconds": 0.0016431920230388641,
+  "max_seconds": 0.0029520359821617603
+}

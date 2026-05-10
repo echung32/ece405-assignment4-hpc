@@ -1,0 +1,80 @@
+{
+  "kind": "flash",
+  "campaign": "assignment_flash_full",
+  "device": "cuda:0",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "naive_bf16",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.flash_benchmark",
+      "args": [
+        "--implementation",
+        "naive",
+        "--dtype",
+        "bf16",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3",
+        "--is-causal"
+      ]
+    },
+    {
+      "name": "flash_triton_bf16",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.flash_benchmark",
+      "args": [
+        "--implementation",
+        "flash_triton",
+        "--dtype",
+        "bf16",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3",
+        "--is-causal"
+      ]
+    },
+    {
+      "name": "naive_fp32",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.flash_benchmark",
+      "args": [
+        "--implementation",
+        "naive",
+        "--dtype",
+        "fp32",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3",
+        "--is-causal"
+      ]
+    },
+    {
+      "name": "flash_triton_fp32",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.flash_benchmark",
+      "args": [
+        "--implementation",
+        "flash_triton",
+        "--dtype",
+        "fp32",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3",
+        "--is-causal"
+      ]
+    }
+  ]
+}

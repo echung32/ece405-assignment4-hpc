@@ -1,0 +1,172 @@
+[Mon May  4 11:41:24 PM HST 2026] Starting Section 2 allreduce ws2 reruns
+[Mon May  4 11:41:24 PM HST 2026] allreduce nccl cuda ws2 1mb (port 29971)
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "size_mb": 1,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 29971,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.00040162302320823073,
+    0.00030097400303930044,
+    0.0003781589912250638,
+    0.00038792804116383195,
+    0.000285615969914943,
+    0.0003086689976043999,
+    0.00031999999191612005,
+    0.0005769919953309,
+    0.006748515006620437,
+    0.006729729997459799
+  ],
+  "mean_seconds": 0.0016438206017483025,
+  "stdev_seconds": 0.0026867537311547718,
+  "min_seconds": 0.000285615969914943,
+  "max_seconds": 0.006748515006620437
+}
+[Mon May  4 11:41:30 PM HST 2026] Done allreduce ws2 1mb
+[Mon May  4 11:41:30 PM HST 2026] allreduce nccl cuda ws2 10mb (port 29980)
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "size_mb": 10,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 29980,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.006705524981953204,
+    0.0031449980451725423,
+    0.003365951997693628,
+    0.00409991794731468,
+    0.003255544987041503,
+    0.003334143024403602,
+    0.0033391420147381723,
+    0.011286084016319364,
+    0.008201028977055103,
+    0.003412619000300765
+  ],
+  "mean_seconds": 0.0050144954991992565,
+  "stdev_seconds": 0.002802496432942185,
+  "min_seconds": 0.0031449980451725423,
+  "max_seconds": 0.011286084016319364
+}
+[Mon May  4 11:41:36 PM HST 2026] Done allreduce ws2 10mb
+[Mon May  4 11:41:36 PM HST 2026] allreduce nccl cuda ws2 100mb (port 30070)
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "size_mb": 100,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 30070,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.02289222803665325,
+    0.021586369024589658,
+    0.021616615005768836,
+    0.011182449001353234,
+    0.03212771698599681,
+    0.020991113036870956,
+    0.021491591003723443,
+    0.025099566963035613,
+    0.016312770021613687,
+    0.02376640704460442
+  ],
+  "mean_seconds": 0.02170668261242099,
+  "stdev_seconds": 0.005438466718250993,
+  "min_seconds": 0.011182449001353234,
+  "max_seconds": 0.03212771698599681
+}
+[Mon May  4 11:41:42 PM HST 2026] Done allreduce ws2 100mb
+[Mon May  4 11:41:42 PM HST 2026] allreduce nccl cuda ws2 1024mb (port 30994)
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "size_mb": 1024,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 30994,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.22617266199085861,
+    0.24401814601151273,
+    0.20704752899473533,
+    0.20332485798280686,
+    0.21261255402350798,
+    0.2257015990326181,
+    0.21251161501277238,
+    0.2042349650291726,
+    0.21492270601447672,
+    0.23166631400818005
+  ],
+  "mean_seconds": 0.21822129481006414,
+  "stdev_seconds": 0.01326121605986606,
+  "min_seconds": 0.20332485798280686,
+  "max_seconds": 0.24401814601151273
+}
+[Mon May  4 11:41:51 PM HST 2026] Done allreduce ws2 1024mb
+[Mon May  4 11:41:51 PM HST 2026] All allreduce ws2 reruns done
+[Mon May  4 11:41:51 PM HST 2026] Starting Section 2 DDP full campaign
+{
+  "campaign": "assignment_section2_ddp_full",
+  "kind": "ddp",
+  "log_dir": "logs/section2/assignment_section2_ddp_full",
+  "data_dir": "data/section2/assignment_section2_ddp_full",
+  "analysis_dir": "data/section2/analysis/assignment_section2_ddp_full",
+  "manifest_path": "data/section2/analysis/assignment_section2_ddp_full/campaign_manifest.json",
+  "run_count": 7,
+  "executed": true
+}
+[Mon May  4 11:47:22 PM HST 2026] DDP campaign done
+[Mon May  4 11:47:22 PM HST 2026] Starting Section 3 full campaigns
+{
+  "campaign": "assignment_section3_timing_full",
+  "kind": "timing",
+  "log_dir": "logs/section3/assignment_section3_timing_full",
+  "data_dir": "data/section3/assignment_section3_timing_full",
+  "analysis_dir": "data/section3/analysis/assignment_section3_timing_full",
+  "manifest_path": "data/section3/analysis/assignment_section3_timing_full/campaign_manifest.json",
+  "run_count": 2,
+  "executed": true
+}
+{
+  "campaign": "assignment_section3_memory_full",
+  "kind": "memory",
+  "log_dir": "logs/section3/assignment_section3_memory_full",
+  "data_dir": "data/section3/assignment_section3_memory_full",
+  "analysis_dir": "data/section3/analysis/assignment_section3_memory_full",
+  "manifest_path": "data/section3/analysis/assignment_section3_memory_full/campaign_manifest.json",
+  "run_count": 2,
+  "executed": true
+}
+[Mon May  4 11:49:44 PM HST 2026] Section 3 done

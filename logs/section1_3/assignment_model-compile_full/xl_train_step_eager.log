@@ -1,0 +1,37 @@
+{
+  "config": {
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "mode": "train_step",
+    "compiled": false,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "precision": "fp32",
+    "device": "cuda:1",
+    "campaign": "assignment_model-compile_full",
+    "output_root": "data/section1_3",
+    "vram_limit_gb": 85.0
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "timings_seconds": [
+    0.5710225300281309,
+    0.5735771100153215,
+    0.5699527540127747,
+    0.6211621629772708,
+    0.5696191189927049,
+    0.5721840590122156,
+    0.5707687140093185,
+    0.5722075130324811,
+    0.5695971469976939,
+    0.5720739819807932
+  ],
+  "mean_seconds": 0.5762165091058705,
+  "stdev_seconds": 0.01584579682337081
+}

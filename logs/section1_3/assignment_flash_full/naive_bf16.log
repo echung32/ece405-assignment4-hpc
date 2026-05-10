@@ -1,0 +1,756 @@
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/autograd/graph.py:869: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:335.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.19042271126302018,
+    "backward_ms": 0.1756851236398719,
+    "end_to_end_ms": 0.4227029969264944
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.20655238023076847,
+    "backward_ms": 0.10002563110064892,
+    "end_to_end_ms": 0.23619728178256055
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.24569633369101213,
+    "backward_ms": 0.16183774673066414,
+    "end_to_end_ms": 0.2035004887869233
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.14037181271078325,
+    "backward_ms": 0.2459665545562638,
+    "end_to_end_ms": 0.4668391324140244
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.3598394925250624,
+    "backward_ms": 0.3552080819152322,
+    "end_to_end_ms": 0.7269792258501053
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.577031461843129,
+    "backward_ms": 1.1231265694816839,
+    "end_to_end_ms": 1.7438781655751743
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 7.401777451688593,
+    "backward_ms": 6.869548809528351,
+    "end_to_end_ms": 13.04786960895245
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 31.051686477661132,
+    "backward_ms": 30.037189801534016,
+    "end_to_end_ms": 59.556437174479164
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 115.52262115478516,
+    "backward_ms": 88.55875396728516,
+    "end_to_end_ms": 203.81024169921875
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "oom",
+    "error": "CUDA out of memory. Tried to allocate 8.00 GiB. GPU 0 has a total capacity of 94.97 GiB of which 1.81 GiB is free. Process 911662 has 4.51 GiB memory in use. Process 1033637 has 56.75 GiB memory in use. Process 2441447 has 10.83 GiB memory in use. Including non-PyTorch memory, this process has 18.68 GiB memory in use. Process 2442685 has 1.22 GiB memory in use. Process 2443999 has 550.00 MiB memory in use. Process 2444007 has 550.00 MiB memory in use. Of the allocated memory 12.02 GiB is allocated by PyTorch, and 6.00 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.18571527191955442,
+    "backward_ms": 0.12606265808962125,
+    "end_to_end_ms": 0.28775417199415065
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.19041160243555658,
+    "backward_ms": 0.09962386244222493,
+    "end_to_end_ms": 0.3140174402173273
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.22148577902221447,
+    "backward_ms": 0.12734238459386518,
+    "end_to_end_ms": 0.35199775517328963
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2084158563403168,
+    "backward_ms": 0.2345386663359736,
+    "end_to_end_ms": 0.500904375836048
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.29102800949419455,
+    "backward_ms": 0.2631943789964223,
+    "end_to_end_ms": 0.5969457606243532
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.3094560358877356,
+    "backward_ms": 0.833299804321831,
+    "end_to_end_ms": 1.3819630892560033
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 6.022467974573374,
+    "backward_ms": 4.762184952580651,
+    "end_to_end_ms": 9.899411746433803
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 26.682157516479492,
+    "backward_ms": 23.767114639282227,
+    "end_to_end_ms": 48.324472427368164
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 108.51026916503906,
+    "backward_ms": 94.95591735839844,
+    "end_to_end_ms": 197.04896545410156
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "oom",
+    "error": "CUDA out of memory. Tried to allocate 8.00 GiB. GPU 0 has a total capacity of 94.97 GiB of which 4.06 GiB is free. Process 911662 has 4.51 GiB memory in use. Process 1033637 has 56.75 GiB memory in use. Process 2441447 has 16.73 GiB memory in use. Including non-PyTorch memory, this process has 10.68 GiB memory in use. Process 2443999 has 550.00 MiB memory in use. Process 2444007 has 550.00 MiB memory in use. Process 2452439 has 1.07 GiB memory in use. Of the allocated memory 8.03 GiB is allocated by PyTorch, and 1.99 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.16357595927021162,
+    "backward_ms": 0.10934069735230878,
+    "end_to_end_ms": 0.277290808236817
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.23507589794711298,
+    "backward_ms": 0.1777643486930245,
+    "end_to_end_ms": 0.20285545864616752
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2685343454078097,
+    "backward_ms": 0.061431687126380266,
+    "end_to_end_ms": 0.33895829698141616
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.23922423981917448,
+    "backward_ms": 0.33174720287357296,
+    "end_to_end_ms": 0.5717007053288294
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.3938310596568878,
+    "backward_ms": 0.1789353146061658,
+    "end_to_end_ms": 0.5971300862789154
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.0114168594260728,
+    "backward_ms": 0.5238514772070109,
+    "end_to_end_ms": 2.09113861894121
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 6.8728485727310185,
+    "backward_ms": 6.717234318596976,
+    "end_to_end_ms": 14.119266656728891
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 26.101787294660294,
+    "backward_ms": 23.424068723406112,
+    "end_to_end_ms": 49.059359550476074
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 79.45219421386719,
+    "backward_ms": 95.0265121459961,
+    "end_to_end_ms": 200.2836456298828
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "oom",
+    "error": "CUDA out of memory. Tried to allocate 8.00 GiB. GPU 0 has a total capacity of 94.97 GiB of which 4.32 GiB is free. Process 911662 has 4.51 GiB memory in use. Process 1033637 has 56.75 GiB memory in use. Process 2441447 has 16.73 GiB memory in use. Including non-PyTorch memory, this process has 9.18 GiB memory in use. Process 2451319 has 648.00 MiB memory in use. Process 2452439 has 1.67 GiB memory in use. Process 2460137 has 550.00 MiB memory in use. Process 2460211 has 550.00 MiB memory in use. Of the allocated memory 8.05 GiB is allocated by PyTorch, and 483.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.20893323242532133,
+    "backward_ms": 0.10195435331858617,
+    "end_to_end_ms": 0.31826071805089196
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2522921914824524,
+    "backward_ms": 0.15707032330952614,
+    "end_to_end_ms": 0.2023392561869349
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2513353520323158,
+    "backward_ms": 0.06962456952839383,
+    "end_to_end_ms": 0.21089078782661877
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.13679496187404913,
+    "backward_ms": 0.19831487905270984,
+    "end_to_end_ms": 0.41978312162989445
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.3074735367156742,
+    "backward_ms": 0.3798151278534221,
+    "end_to_end_ms": 0.5536880648738992
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.9603480322416439,
+    "backward_ms": 0.7906760861762137,
+    "end_to_end_ms": 1.7891187243461608
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 5.540951783316476,
+    "backward_ms": 4.879601035267115,
+    "end_to_end_ms": 7.890836743747487
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 23.942344838922676,
+    "backward_ms": 23.926623821258545,
+    "end_to_end_ms": 49.15605640411377
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 108.7017593383789,
+    "backward_ms": 117.09744262695312,
+    "end_to_end_ms": 200.8025665283203
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "bf16",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "oom",
+    "error": "CUDA out of memory. Tried to allocate 8.00 GiB. GPU 0 has a total capacity of 94.97 GiB of which 5.04 GiB is free. Process 911662 has 4.51 GiB memory in use. Process 1033637 has 56.75 GiB memory in use. Process 2441447 has 8.74 GiB memory in use. Including non-PyTorch memory, this process has 16.81 GiB memory in use. Process 2452439 has 1.96 GiB memory in use. Process 2460137 has 550.00 MiB memory in use. Process 2460211 has 550.00 MiB memory in use. Of the allocated memory 12.08 GiB is allocated by PyTorch, and 4.07 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)"
+  }
+]

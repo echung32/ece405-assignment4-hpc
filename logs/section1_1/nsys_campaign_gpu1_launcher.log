@@ -1,0 +1,9 @@
+{
+  "campaign": "assignment_nsys_full",
+  "kind": "nsys",
+  "log_dir": "logs/section1_1/assignment_nsys_full",
+  "analysis_dir": "data/section1_1/analysis/assignment_nsys_full",
+  "manifest_path": "data/section1_1/analysis/assignment_nsys_full/campaign_manifest.json",
+  "run_count": 60,
+  "executed": true
+}

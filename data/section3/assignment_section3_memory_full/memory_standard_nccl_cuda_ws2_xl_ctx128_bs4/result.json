@@ -1,0 +1,66 @@
+{
+  "config": {
+    "mode": "memory",
+    "optimizer_impl": "standard",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 3,
+    "measure_steps": 5,
+    "bucket_size_mb": 25.0,
+    "master_port": 29800,
+    "campaign": "assignment_section3_memory_full",
+    "output_root": "data/section3"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "timings_seconds": [
+    1.9414962530136108,
+    1.9526150840101764,
+    1.9180487740086392,
+    1.8769995989860035,
+    1.9527128769550472
+  ],
+  "mean_seconds": 1.9283745173946953,
+  "stdev_seconds": 0.03200837382449975,
+  "min_seconds": 1.8769995989860035,
+  "max_seconds": 1.9527128769550472,
+  "memory": {
+    "post_init": {
+      "label": "post_init",
+      "parameter_bytes": 7992940800,
+      "gradient_bytes": 0,
+      "optimizer_state_bytes": 0,
+      "cuda_allocated_bytes": 8183765504,
+      "cuda_reserved_bytes": 8185184256,
+      "cuda_max_allocated_bytes": 8183765504
+    },
+    "pre_step": {
+      "label": "pre_step",
+      "parameter_bytes": 7992940800,
+      "gradient_bytes": 7992940800,
+      "optimizer_state_bytes": 15985883340,
+      "cuda_allocated_bytes": 32725784576,
+      "cuda_reserved_bytes": 42746249216,
+      "cuda_max_allocated_bytes": 40903140352
+    },
+    "post_step": {
+      "label": "post_step",
+      "parameter_bytes": 7992940800,
+      "gradient_bytes": 7992940800,
+      "optimizer_state_bytes": 15985883340,
+      "cuda_allocated_bytes": 32725784576,
+      "cuda_reserved_bytes": 42746249216,
+      "cuda_max_allocated_bytes": 40903140352
+    }
+  }
+}

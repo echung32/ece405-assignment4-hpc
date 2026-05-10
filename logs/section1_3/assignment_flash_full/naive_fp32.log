@@ -1,0 +1,764 @@
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/autograd/graph.py:869: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:335.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.14646324975183234,
+    "backward_ms": 0.06747911502367894,
+    "end_to_end_ms": 0.14117189494876514
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2152495435312923,
+    "backward_ms": 0.5130524564546104,
+    "end_to_end_ms": 0.4421014922145053
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.20714920582988905,
+    "backward_ms": 0.19766611114188326,
+    "end_to_end_ms": 0.339633065222958
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.27767844774405853,
+    "backward_ms": 0.09876172649159862,
+    "end_to_end_ms": 0.41866164972042214
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.46722769160028343,
+    "backward_ms": 0.42437679630934344,
+    "end_to_end_ms": 0.9327252857689701
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.4747777435564458,
+    "backward_ms": 1.814510476967645,
+    "end_to_end_ms": 3.752926157330567
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 11.906096041202545,
+    "backward_ms": 11.201350378990174,
+    "end_to_end_ms": 22.149510913425022
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 46.91143226623535,
+    "backward_ms": 46.8007116317749,
+    "end_to_end_ms": 100.38201522827148
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 186.49481201171875,
+    "backward_ms": 201.28054809570312,
+    "end_to_end_ms": 384.75445556640625
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 16,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 777.0988159179688,
+    "backward_ms": 769.0844116210938,
+    "end_to_end_ms": 1514.585693359375
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.1866410158542501,
+    "backward_ms": 0.12174866445464631,
+    "end_to_end_ms": 0.14009240283934093
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.19465948026111005,
+    "backward_ms": 0.09669817601889372,
+    "end_to_end_ms": 0.19590169675836358
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.21205127946288177,
+    "backward_ms": 0.1516537282317877,
+    "end_to_end_ms": 0.28509615293353985
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.21733079444965622,
+    "backward_ms": 0.31394651471359897,
+    "end_to_end_ms": 0.49590043901977404
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.44058156299491585,
+    "backward_ms": 0.47914928638529236,
+    "end_to_end_ms": 0.9354122001864389
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1.80023136309215,
+    "backward_ms": 2.0060855758095544,
+    "end_to_end_ms": 3.5266621077761933
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 11.83283551534017,
+    "backward_ms": 11.262951347563002,
+    "end_to_end_ms": 22.168825149536133
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 47.0955753326416,
+    "backward_ms": 47.1446475982666,
+    "end_to_end_ms": 96.41918563842773
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 187.5370635986328,
+    "backward_ms": 202.10899353027344,
+    "end_to_end_ms": 391.816650390625
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 32,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 814.8035888671875,
+    "backward_ms": 1011.5262451171875,
+    "end_to_end_ms": 2003.9830322265625
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2627780517644208,
+    "backward_ms": 0.09637496007357056,
+    "end_to_end_ms": 0.4464871185400602
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2648050845670166,
+    "backward_ms": 0.09920391358553653,
+    "end_to_end_ms": 0.5494328326661921
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2544851723326136,
+    "backward_ms": 0.24895999934046698,
+    "end_to_end_ms": 0.2756743893722568
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.2065361351027327,
+    "backward_ms": 0.4126831817773932,
+    "end_to_end_ms": 0.48725799070955883
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.7085279552156434,
+    "backward_ms": 0.5806126380550929,
+    "end_to_end_ms": 1.300262106277726
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 2.2985364816274987,
+    "backward_ms": 1.8722423881292343,
+    "end_to_end_ms": 5.060397734244664
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 14.96344859783466,
+    "backward_ms": 15.8257691519601,
+    "end_to_end_ms": 29.858272552490234
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 63.41397221883138,
+    "backward_ms": 62.87679926554362,
+    "end_to_end_ms": 136.83775329589844
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 251.693603515625,
+    "backward_ms": 263.3748474121094,
+    "end_to_end_ms": 512.5778198242188
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 64,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1034.1033935546875,
+    "backward_ms": 1041.0963134765625,
+    "end_to_end_ms": 2070.56884765625
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 128,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.31506252404779134,
+    "backward_ms": 0.06336000008953487,
+    "end_to_end_ms": 0.629748830481682
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 256,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.38446145566331374,
+    "backward_ms": 0.0948114741697492,
+    "end_to_end_ms": 1.053246826617893
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 512,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.3781670643878517,
+    "backward_ms": 0.16000828247100926,
+    "end_to_end_ms": 0.6691479467769827
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 1024,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.6609449394660838,
+    "backward_ms": 0.1693621410348383,
+    "end_to_end_ms": 0.7831073546921317
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 2048,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 0.7981482530366394,
+    "backward_ms": 0.8358394204109323,
+    "end_to_end_ms": 1.7854570431687007
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 4096,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 2.346975667574971,
+    "backward_ms": 3.6110662910673352,
+    "end_to_end_ms": 5.950292100225176
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 8192,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 15.996243623586802,
+    "backward_ms": 18.018981846896086,
+    "end_to_end_ms": 34.368248748779294
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 16384,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 66.42607879638672,
+    "backward_ms": 75.73894500732422,
+    "end_to_end_ms": 136.90541076660156
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 32768,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 272.2918701171875,
+    "backward_ms": 293.35137939453125,
+    "end_to_end_ms": 558.6130981445312
+  },
+  {
+    "config": {
+      "implementation": "naive",
+      "batch_size": 1,
+      "d_model": 128,
+      "sequence_length": 65536,
+      "warmup_ms": 100,
+      "rep_ms": 200,
+      "device": "cuda:0",
+      "dtype": "fp32",
+      "is_causal": true,
+      "campaign": "assignment_flash_full",
+      "output_root": "data/section1_3"
+    },
+    "status": "ok",
+    "forward_ms": 1086.33056640625,
+    "backward_ms": 1161.4859619140625,
+    "end_to_end_ms": 2261.929931640625
+  }
+]

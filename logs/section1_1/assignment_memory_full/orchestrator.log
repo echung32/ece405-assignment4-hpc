@@ -1,0 +1,29 @@
+campaign=assignment_memory_full
+kind=memory
+device=cuda:1
+smoke=False
+run_count=12
+planned 2.7b_ctx128_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 128 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx128_forward_fp32: return_code=0
+planned 2.7b_ctx128_forward_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 128 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx128_forward_bf16: return_code=0
+planned 2.7b_ctx128_train_step_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 128 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx128_train_step_fp32: return_code=0
+planned 2.7b_ctx128_train_step_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 128 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx128_train_step_bf16: return_code=0
+planned 2.7b_ctx256_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 256 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx256_forward_fp32: return_code=0
+planned 2.7b_ctx256_forward_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 256 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx256_forward_bf16: return_code=0
+planned 2.7b_ctx256_train_step_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 256 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx256_train_step_fp32: return_code=1
+planned 2.7b_ctx256_train_step_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 256 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx256_train_step_bf16: return_code=0
+planned 2.7b_ctx512_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 512 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx512_forward_fp32: return_code=0
+planned 2.7b_ctx512_forward_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 512 --batch-size 1 --mode forward --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx512_forward_bf16: return_code=0
+planned 2.7b_ctx512_train_step_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 512 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision fp32 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx512_train_step_fp32: return_code=0
+planned 2.7b_ctx512_train_step_bf16: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.benchmarking_script --model-size 2.7b --context-length 512 --batch-size 1 --mode train_step --warmup-steps 5 --measure-steps 1 --precision bf16 --device cuda:1 --campaign assignment_memory_full --output-root data/section1_1 --vram-limit-gb 80.0 --profile-memory
+finished 2.7b_ctx512_train_step_bf16: return_code=0

@@ -1,0 +1,37 @@
+{
+  "config": {
+    "model_size": "2.7b",
+    "context_length": 256,
+    "batch_size": 1,
+    "mode": "forward",
+    "warmup_steps": 5,
+    "measure_steps": 1,
+    "precision": "bf16",
+    "device": "cuda:1",
+    "seed": 0,
+    "vram_limit_gb": 80.0,
+    "profile_memory": true,
+    "annotate_attention": false,
+    "campaign": "assignment_memory_full",
+    "output_root": "data/section1_1"
+  },
+  "model_spec": {
+    "name": "2.7b",
+    "d_model": 2560,
+    "d_ff": 10240,
+    "num_layers": 32,
+    "num_heads": 32
+  },
+  "timings_seconds": [
+    0.1296431889932137
+  ],
+  "mean_seconds": 0.1296431889932137,
+  "stdev_seconds": 0.0,
+  "peak_reserved_bytes": 20956839936,
+  "peak_reserved_gb": 19.517578125,
+  "peak_device_used_bytes": 20956839936,
+  "peak_device_used_gb": 19.517578125,
+  "snapshot_path": "data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_forward_bf16/memory_snapshot.pickle",
+  "parameter_count": 3406809600,
+  "loss": null
+}

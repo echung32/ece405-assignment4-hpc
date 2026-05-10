@@ -1,0 +1,30 @@
+{
+  "config": {
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "size_mb": 10,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "master_port": 29980,
+    "campaign": "assignment_section2_allreduce_full",
+    "output_root": "data/section2"
+  },
+  "status": "ok",
+  "timings_seconds": [
+    0.006705524981953204,
+    0.0031449980451725423,
+    0.003365951997693628,
+    0.00409991794731468,
+    0.003255544987041503,
+    0.003334143024403602,
+    0.0033391420147381723,
+    0.011286084016319364,
+    0.008201028977055103,
+    0.003412619000300765
+  ],
+  "mean_seconds": 0.0050144954991992565,
+  "stdev_seconds": 0.002802496432942185,
+  "min_seconds": 0.0031449980451725423,
+  "max_seconds": 0.011286084016319364
+}

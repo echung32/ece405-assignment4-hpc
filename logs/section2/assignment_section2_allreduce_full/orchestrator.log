@@ -1,0 +1,52 @@
+campaign=assignment_section2_allreduce_full
+kind=allreduce
+smoke=False
+run_count=24
+planned allreduce_gloo_cpu_ws2_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 2 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29700
+finished allreduce_gloo_cpu_ws2_1mb: return_code=0
+planned allreduce_gloo_cpu_ws2_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 2 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29701
+finished allreduce_gloo_cpu_ws2_10mb: return_code=0
+planned allreduce_gloo_cpu_ws2_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 2 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29702
+finished allreduce_gloo_cpu_ws2_100mb: return_code=0
+planned allreduce_gloo_cpu_ws2_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 2 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29703
+finished allreduce_gloo_cpu_ws2_1024mb: return_code=0
+planned allreduce_gloo_cpu_ws4_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 4 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29704
+finished allreduce_gloo_cpu_ws4_1mb: return_code=0
+planned allreduce_gloo_cpu_ws4_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 4 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29705
+finished allreduce_gloo_cpu_ws4_10mb: return_code=0
+planned allreduce_gloo_cpu_ws4_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 4 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29706
+finished allreduce_gloo_cpu_ws4_100mb: return_code=0
+planned allreduce_gloo_cpu_ws4_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 4 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29707
+finished allreduce_gloo_cpu_ws4_1024mb: return_code=0
+planned allreduce_gloo_cpu_ws6_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 6 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29708
+finished allreduce_gloo_cpu_ws6_1mb: return_code=0
+planned allreduce_gloo_cpu_ws6_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 6 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29709
+finished allreduce_gloo_cpu_ws6_10mb: return_code=0
+planned allreduce_gloo_cpu_ws6_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 6 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29710
+finished allreduce_gloo_cpu_ws6_100mb: return_code=0
+planned allreduce_gloo_cpu_ws6_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend gloo --device-type cpu --world-size 6 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29711
+finished allreduce_gloo_cpu_ws6_1024mb: return_code=0
+planned allreduce_nccl_cuda_ws2_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 2 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29712
+finished allreduce_nccl_cuda_ws2_1mb: return_code=1
+planned allreduce_nccl_cuda_ws2_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 2 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29713
+finished allreduce_nccl_cuda_ws2_10mb: return_code=1
+planned allreduce_nccl_cuda_ws2_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 2 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29714
+finished allreduce_nccl_cuda_ws2_100mb: return_code=1
+planned allreduce_nccl_cuda_ws2_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 2 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29715
+finished allreduce_nccl_cuda_ws2_1024mb: return_code=1
+planned allreduce_nccl_cuda_ws4_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 4 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29716
+finished allreduce_nccl_cuda_ws4_1mb: return_code=0
+planned allreduce_nccl_cuda_ws4_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 4 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29717
+finished allreduce_nccl_cuda_ws4_10mb: return_code=0
+planned allreduce_nccl_cuda_ws4_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 4 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29718
+finished allreduce_nccl_cuda_ws4_100mb: return_code=0
+planned allreduce_nccl_cuda_ws4_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 4 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29719
+finished allreduce_nccl_cuda_ws4_1024mb: return_code=0
+planned allreduce_nccl_cuda_ws6_1mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 6 --size-mb 1 --campaign assignment_section2_allreduce_full --master-port 29720
+finished allreduce_nccl_cuda_ws6_1mb: return_code=0
+planned allreduce_nccl_cuda_ws6_10mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 6 --size-mb 10 --campaign assignment_section2_allreduce_full --master-port 29721
+finished allreduce_nccl_cuda_ws6_10mb: return_code=0
+planned allreduce_nccl_cuda_ws6_100mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 6 --size-mb 100 --campaign assignment_section2_allreduce_full --master-port 29722
+finished allreduce_nccl_cuda_ws6_100mb: return_code=0
+planned allreduce_nccl_cuda_ws6_1024mb: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section2.benchmarks allreduce --backend nccl --device-type cuda --world-size 6 --size-mb 1024 --campaign assignment_section2_allreduce_full --master-port 29723
+finished allreduce_nccl_cuda_ws6_1024mb: return_code=0

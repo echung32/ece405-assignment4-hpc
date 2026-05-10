@@ -1,0 +1,19 @@
+{
+  "config": {
+    "implementation": "naive",
+    "batch_size": 1,
+    "d_model": 64,
+    "sequence_length": 16384,
+    "warmup_ms": 100,
+    "rep_ms": 200,
+    "device": "cuda:0",
+    "dtype": "fp32",
+    "is_causal": true,
+    "campaign": "assignment_flash_full",
+    "output_root": "data/section1_3"
+  },
+  "status": "ok",
+  "forward_ms": 63.41397221883138,
+  "backward_ms": 62.87679926554362,
+  "end_to_end_ms": 136.83775329589844
+}

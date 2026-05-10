@@ -1,0 +1,153 @@
+{
+  "kind": "memory",
+  "campaign": "assignment_memory_full",
+  "device": "cuda:1",
+  "vram_limit_gb": 80.0,
+  "smoke": false,
+  "runs": [
+    {
+      "name": "2.7b_ctx128_forward_fp32",
+      "model_size": "2.7b",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx128_forward_bf16",
+      "model_size": "2.7b",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx128_train_step_fp32",
+      "model_size": "2.7b",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx128_train_step_bf16",
+      "model_size": "2.7b",
+      "context_length": 128,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx256_forward_fp32",
+      "model_size": "2.7b",
+      "context_length": 256,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx256_forward_bf16",
+      "model_size": "2.7b",
+      "context_length": 256,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx256_train_step_fp32",
+      "model_size": "2.7b",
+      "context_length": 256,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx256_train_step_bf16",
+      "model_size": "2.7b",
+      "context_length": 256,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx512_forward_fp32",
+      "model_size": "2.7b",
+      "context_length": 512,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx512_forward_bf16",
+      "model_size": "2.7b",
+      "context_length": 512,
+      "batch_size": 1,
+      "mode": "forward",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx512_train_step_fp32",
+      "model_size": "2.7b",
+      "context_length": 512,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "fp32",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    },
+    {
+      "name": "2.7b_ctx512_train_step_bf16",
+      "model_size": "2.7b",
+      "context_length": 512,
+      "batch_size": 1,
+      "mode": "train_step",
+      "precision": "bf16",
+      "warmup_steps": 5,
+      "measure_steps": 1,
+      "annotate_attention": false,
+      "profile_memory": true
+    }
+  ]
+}

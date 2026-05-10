@@ -1,0 +1,68 @@
+{
+  "kind": "attention",
+  "campaign": "assignment_attention_full",
+  "device": "cuda:0",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "naive_fp32",
+      "area": "section1_2",
+      "module": "cs336_systems.section1.pytorch_attention",
+      "args": [
+        "--implementation",
+        "naive",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_2"
+      ]
+    },
+    {
+      "name": "compiled_naive_fp32",
+      "area": "section1_2",
+      "module": "cs336_systems.section1.pytorch_attention",
+      "args": [
+        "--implementation",
+        "compiled_naive",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_2"
+      ]
+    },
+    {
+      "name": "flash_pytorch_fp32",
+      "area": "section1_2",
+      "module": "cs336_systems.section1.pytorch_attention",
+      "args": [
+        "--implementation",
+        "flash_pytorch",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_2"
+      ]
+    },
+    {
+      "name": "flash_triton_fp32",
+      "area": "section1_2",
+      "module": "cs336_systems.section1.pytorch_attention",
+      "args": [
+        "--implementation",
+        "flash_triton",
+        "--device",
+        "cuda:0",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_2"
+      ]
+    }
+  ]
+}

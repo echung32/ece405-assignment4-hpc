@@ -1,0 +1,533 @@
+{
+  "kind": "model-compile",
+  "campaign": "assignment_model-compile_full",
+  "device": "cuda:1",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "small_forward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "forward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "small_forward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "forward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "small_forward_backward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "forward_backward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "small_forward_backward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "forward_backward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "small_train_step_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "train_step",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "small_train_step_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "small",
+        "--mode",
+        "train_step",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_forward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "forward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_forward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "forward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_forward_backward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "forward_backward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_forward_backward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "forward_backward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_train_step_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "train_step",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "medium_train_step_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "medium",
+        "--mode",
+        "train_step",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_forward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "forward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_forward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "forward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_forward_backward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "forward_backward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_forward_backward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "forward_backward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_train_step_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "train_step",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "large_train_step_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "large",
+        "--mode",
+        "train_step",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_forward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "forward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_forward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "forward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_forward_backward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "forward_backward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_forward_backward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "forward_backward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_train_step_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "train_step",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "xl_train_step_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "xl",
+        "--mode",
+        "train_step",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_forward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "forward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_forward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "forward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_forward_backward_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "forward_backward",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_forward_backward_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "forward_backward",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_train_step_eager",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "train_step",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    },
+    {
+      "name": "2.7b_train_step_compiled",
+      "area": "section1_3",
+      "module": "cs336_systems.section1.torch_compile",
+      "args": [
+        "--model-size",
+        "2.7b",
+        "--mode",
+        "train_step",
+        "--compiled",
+        "--device",
+        "cuda:1",
+        "--campaign",
+        "{campaign}",
+        "--output-root",
+        "data/section1_3"
+      ]
+    }
+  ]
+}

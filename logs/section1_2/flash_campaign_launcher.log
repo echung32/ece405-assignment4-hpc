@@ -1,0 +1,11 @@
+{
+  "campaign": "assignment_flash_full",
+  "kind": "flash",
+  "area": "section1_3",
+  "log_dir": "logs/section1_3/assignment_flash_full",
+  "data_dir": "data/section1_3/assignment_flash_full",
+  "analysis_dir": "data/section1_3/analysis/assignment_flash_full",
+  "manifest_path": "data/section1_3/analysis/assignment_flash_full/campaign_manifest.json",
+  "run_count": 4,
+  "executed": true
+}

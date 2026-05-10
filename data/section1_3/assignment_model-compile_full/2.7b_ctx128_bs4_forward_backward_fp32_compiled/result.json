@@ -1,0 +1,37 @@
+{
+  "config": {
+    "model_size": "2.7b",
+    "context_length": 128,
+    "batch_size": 4,
+    "mode": "forward_backward",
+    "compiled": true,
+    "warmup_steps": 5,
+    "measure_steps": 10,
+    "precision": "fp32",
+    "device": "cuda:1",
+    "campaign": "assignment_model-compile_full",
+    "output_root": "data/section1_3",
+    "vram_limit_gb": 40.0
+  },
+  "model_spec": {
+    "name": "2.7b",
+    "d_model": 2560,
+    "d_ff": 10240,
+    "num_layers": 32,
+    "num_heads": 32
+  },
+  "timings_seconds": [
+    0.8114852499857079,
+    0.8051519629952963,
+    0.8126984639966395,
+    0.8015617310011294,
+    0.8074454040033743,
+    0.8020909029874019,
+    0.8048581320035737,
+    0.8117222040018532,
+    0.80573172098957,
+    0.8139534780057147
+  ],
+  "mean_seconds": 0.8076699249970261,
+  "stdev_seconds": 0.0044998245668584685
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "memory",
+  "campaign": "assignment_section3_memory_full",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "memory_standard",
+      "module": "cs336_systems.section3.benchmarks",
+      "args": [
+        "memory",
+        "--optimizer-impl",
+        "standard",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "memory_sharded",
+      "module": "cs336_systems.section3.benchmarks",
+      "args": [
+        "memory",
+        "--optimizer-impl",
+        "sharded",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--model-size",
+        "xl",
+        "--campaign",
+        "{campaign}"
+      ]
+    }
+  ]
+}

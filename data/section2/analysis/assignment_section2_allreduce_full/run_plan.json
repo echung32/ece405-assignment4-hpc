@@ -1,0 +1,415 @@
+{
+  "kind": "allreduce",
+  "campaign": "assignment_section2_allreduce_full",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "allreduce_gloo_cpu_ws2_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws2_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws2_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws2_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws4_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws4_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws4_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws4_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws6_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws6_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws6_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_gloo_cpu_ws6_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "gloo",
+        "--device-type",
+        "cpu",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws2_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws2_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws2_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws2_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "2",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws4_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws4_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws4_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws4_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "4",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws6_1mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "1",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws6_10mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "10",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws6_100mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "100",
+        "--campaign",
+        "{campaign}"
+      ]
+    },
+    {
+      "name": "allreduce_nccl_cuda_ws6_1024mb",
+      "module": "cs336_systems.section2.benchmarks",
+      "args": [
+        "allreduce",
+        "--backend",
+        "nccl",
+        "--device-type",
+        "cuda",
+        "--world-size",
+        "6",
+        "--size-mb",
+        "1024",
+        "--campaign",
+        "{campaign}"
+      ]
+    }
+  ]
+}

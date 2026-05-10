@@ -1,0 +1,82 @@
+| config_implementation | config_dtype | config_sequence_length | config_d_model | status | forward_mean_seconds | backward_mean_seconds |
+| --- | --- | --- | --- | --- | --- | --- |
+| compiled_naive | fp32 | 256 | 16 | ok | 0.009989 | 0.009651 |
+| compiled_naive | fp32 | 1024 | 16 | ok | 0.009953 | 0.009958 |
+| compiled_naive | fp32 | 4096 | 16 | ok | 0.011965 | 0.022837 |
+| compiled_naive | fp32 | 8192 | 16 | ok | 0.047950 | 0.069851 |
+| compiled_naive | fp32 | 16384 | 16 | ok | 0.142324 | 0.214888 |
+| compiled_naive | fp32 | 256 | 32 | ok | 0.007471 | 0.007623 |
+| compiled_naive | fp32 | 1024 | 32 | ok | 0.007609 | 0.007740 |
+| compiled_naive | fp32 | 4096 | 32 | ok | 0.017726 | 0.019170 |
+| compiled_naive | fp32 | 8192 | 32 | ok | 0.048128 | 0.069509 |
+| compiled_naive | fp32 | 16384 | 32 | oom |  |  |
+| compiled_naive | fp32 | 256 | 64 | ok | 0.007867 | 0.007845 |
+| compiled_naive | fp32 | 1024 | 64 | ok | 0.009775 | 0.007341 |
+| compiled_naive | fp32 | 4096 | 64 | ok | 0.018459 | 0.021493 |
+| compiled_naive | fp32 | 8192 | 64 | ok | 0.057210 | 0.080679 |
+| compiled_naive | fp32 | 16384 | 64 | oom |  |  |
+| compiled_naive | fp32 | 256 | 128 | ok | 0.008066 | 0.007558 |
+| compiled_naive | fp32 | 1024 | 128 | ok | 0.008186 | 0.007516 |
+| compiled_naive | fp32 | 4096 | 128 | ok | 0.018929 | 0.028339 |
+| compiled_naive | fp32 | 8192 | 128 | ok | 0.073526 | 0.110162 |
+| compiled_naive | fp32 | 16384 | 128 | oom |  |  |
+| flash_pytorch | fp32 | 256 | 16 | ok | 0.008879 | 0.007994 |
+| flash_pytorch | fp32 | 1024 | 16 | ok | 0.017718 | 0.018690 |
+| flash_pytorch | fp32 | 4096 | 16 | ok | 0.224411 | 0.292070 |
+| flash_pytorch | fp32 | 8192 | 16 | ok | 0.854809 | 1.199573 |
+| flash_pytorch | fp32 | 16384 | 16 | ok | 3.239778 | 4.421601 |
+| flash_pytorch | fp32 | 256 | 32 | ok | 0.007733 | 0.007835 |
+| flash_pytorch | fp32 | 1024 | 32 | ok | 0.018070 | 0.018896 |
+| flash_pytorch | fp32 | 4096 | 32 | ok | 0.215201 | 0.282144 |
+| flash_pytorch | fp32 | 8192 | 32 | ok | 0.836630 | 1.187498 |
+| flash_pytorch | fp32 | 16384 | 32 | ok | 3.251724 | 3.639378 |
+| flash_pytorch | fp32 | 256 | 64 | ok | 0.005900 | 0.005403 |
+| flash_pytorch | fp32 | 1024 | 64 | ok | 0.013981 | 0.014747 |
+| flash_pytorch | fp32 | 4096 | 64 | ok | 0.165950 | 0.232923 |
+| flash_pytorch | fp32 | 8192 | 64 | ok | 0.651753 | 0.919208 |
+| flash_pytorch | fp32 | 16384 | 64 | ok | 2.544163 | 3.714099 |
+| flash_pytorch | fp32 | 256 | 128 | ok | 0.005848 | 0.005745 |
+| flash_pytorch | fp32 | 1024 | 128 | ok | 0.014244 | 0.015074 |
+| flash_pytorch | fp32 | 4096 | 128 | ok | 0.176526 | 0.248997 |
+| flash_pytorch | fp32 | 8192 | 128 | ok | 0.630104 | 0.726605 |
+| flash_pytorch | fp32 | 16384 | 128 | ok | 2.639601 | 3.426075 |
+| flash_triton | fp32 | 256 | 16 | ok | 0.005633 | 0.005726 |
+| flash_triton | fp32 | 1024 | 16 | ok | 0.005721 | 0.014544 |
+| flash_triton | fp32 | 4096 | 16 | ok | 0.005723 | 0.212693 |
+| flash_triton | fp32 | 8192 | 16 | ok | 0.006073 | 0.858163 |
+| flash_triton | fp32 | 16384 | 16 | ok | 0.007450 | 3.918795 |
+| flash_triton | fp32 | 256 | 32 | ok | 0.005635 | 0.005620 |
+| flash_triton | fp32 | 1024 | 32 | ok | 0.005648 | 0.014862 |
+| flash_triton | fp32 | 4096 | 32 | ok | 0.005782 | 0.220505 |
+| flash_triton | fp32 | 8192 | 32 | ok | 0.006433 | 0.888510 |
+| flash_triton | fp32 | 16384 | 32 | ok | 0.014224 | 3.634439 |
+| flash_triton | fp32 | 256 | 64 | ok | 0.005669 | 0.005671 |
+| flash_triton | fp32 | 1024 | 64 | ok | 0.005693 | 0.014830 |
+| flash_triton | fp32 | 4096 | 64 | ok | 0.005988 | 0.229238 |
+| flash_triton | fp32 | 8192 | 64 | ok | 0.007052 | 0.916378 |
+| flash_triton | fp32 | 16384 | 64 | ok | 0.021963 | 3.715806 |
+| flash_triton | fp32 | 256 | 128 | ok | 0.005719 | 0.005762 |
+| flash_triton | fp32 | 1024 | 128 | ok | 0.005773 | 0.015021 |
+| flash_triton | fp32 | 4096 | 128 | ok | 0.006597 | 0.250676 |
+| flash_triton | fp32 | 8192 | 128 | ok | 0.015127 | 1.003627 |
+| flash_triton | fp32 | 16384 | 128 | ok | 0.059745 | 3.818923 |
+| naive | fp32 | 256 | 16 | ok | 0.006519 | 0.008571 |
+| naive | fp32 | 1024 | 16 | ok | 0.006101 | 0.004082 |
+| naive | fp32 | 4096 | 16 | ok | 0.021683 | 0.021135 |
+| naive | fp32 | 8192 | 16 | ok | 0.082889 | 0.070995 |
+| naive | fp32 | 16384 | 16 | oom |  |  |
+| naive | fp32 | 256 | 32 | ok | 0.007730 | 0.006229 |
+| naive | fp32 | 1024 | 32 | ok | 0.005815 | 0.005220 |
+| naive | fp32 | 4096 | 32 | ok | 0.022274 | 0.021611 |
+| naive | fp32 | 8192 | 32 | ok | 0.061739 | 0.069571 |
+| naive | fp32 | 16384 | 32 | oom |  |  |
+| naive | fp32 | 256 | 64 | ok | 0.005271 | 0.003347 |
+| naive | fp32 | 1024 | 64 | ok | 0.005292 | 0.005371 |
+| naive | fp32 | 4096 | 64 | ok | 0.020127 | 0.020552 |
+| naive | fp32 | 8192 | 64 | ok | 0.073244 | 0.069372 |
+| naive | fp32 | 16384 | 64 | oom |  |  |
+| naive | fp32 | 256 | 128 | ok | 0.006379 | 0.004568 |
+| naive | fp32 | 1024 | 128 | ok | 0.001388 | 0.004397 |
+| naive | fp32 | 4096 | 128 | ok | 0.020887 | 0.029529 |
+| naive | fp32 | 8192 | 128 | ok | 0.079207 | 0.124387 |
+| naive | fp32 | 16384 | 128 | oom |  |  |

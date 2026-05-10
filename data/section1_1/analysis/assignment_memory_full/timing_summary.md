@@ -1,0 +1,14 @@
+| config_model_size | config_context_length | config_batch_size | config_mode | config_precision | mean_seconds | stdev_seconds | peak_reserved_gb | peak_device_used_gb | snapshot_path |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2.7b | 128 | 1 | forward | bf16 | 0.095054 | 0.000000 | 19.333984 | 19.333984 | data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_forward_bf16/memory_snapshot.pickle |
+| 2.7b | 128 | 1 | forward | fp32 | 0.160339 | 0.000000 | 12.859375 | 12.859375 | data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_forward_fp32/memory_snapshot.pickle |
+| 2.7b | 128 | 1 | train_step | bf16 | 1.397170 | 0.000000 | 58.917969 | 58.917969 | data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_train_step_bf16/memory_snapshot.pickle |
+| 2.7b | 128 | 1 | train_step | fp32 | 1.121791 | 0.000000 | 53.232422 | 53.232422 | data/section1_1/assignment_memory_full/2.7b_ctx128_bs1_train_step_fp32/memory_snapshot.pickle |
+| 2.7b | 256 | 1 | forward | bf16 | 0.129643 | 0.000000 | 19.517578 | 19.517578 | data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_forward_bf16/memory_snapshot.pickle |
+| 2.7b | 256 | 1 | forward | fp32 | 0.308159 | 0.000000 | 12.896484 | 12.896484 | data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_forward_fp32/memory_snapshot.pickle |
+| 2.7b | 256 | 1 | train_step | bf16 | 1.406339 | 0.000000 | 60.103516 | 60.103516 | data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_train_step_bf16/memory_snapshot.pickle |
+| 2.7b | 256 | 1 | train_step | fp32 | 0.835605 | 0.006127 | 54.867188 | 54.867188 | data/section1_1/assignment_memory_full/2.7b_ctx256_bs1_train_step_fp32/memory_snapshot.pickle |
+| 2.7b | 512 | 1 | forward | bf16 | 0.151227 | 0.000000 | 19.654297 | 19.654297 | data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_forward_bf16/memory_snapshot.pickle |
+| 2.7b | 512 | 1 | forward | fp32 | 0.419266 | 0.000000 | 13.001953 | 13.001953 | data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_forward_fp32/memory_snapshot.pickle |
+| 2.7b | 512 | 1 | train_step | bf16 | 1.595443 | 0.000000 | 62.486328 | 62.486328 | data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_train_step_bf16/memory_snapshot.pickle |
+| 2.7b | 512 | 1 | train_step | fp32 | 2.850343 | 0.000000 | 54.550781 | 54.550781 | data/section1_1/assignment_memory_full/2.7b_ctx512_bs1_train_step_fp32/memory_snapshot.pickle |

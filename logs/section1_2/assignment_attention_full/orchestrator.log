@@ -1,0 +1,14 @@
+campaign=assignment_attention_full
+kind=attention
+area=section1_2
+device=cuda:0
+smoke=False
+run_count=4
+planned naive_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.pytorch_attention --implementation naive --device cuda:0 --campaign assignment_attention_full --output-root data/section1_2
+finished naive_fp32: return_code=0
+planned compiled_naive_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.pytorch_attention --implementation compiled_naive --device cuda:0 --campaign assignment_attention_full --output-root data/section1_2
+finished compiled_naive_fp32: return_code=0
+planned flash_pytorch_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.pytorch_attention --implementation flash_pytorch --device cuda:0 --campaign assignment_attention_full --output-root data/section1_2
+finished flash_pytorch_fp32: return_code=0
+planned flash_triton_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.pytorch_attention --implementation flash_triton --device cuda:0 --campaign assignment_attention_full --output-root data/section1_2
+finished flash_triton_fp32: return_code=0

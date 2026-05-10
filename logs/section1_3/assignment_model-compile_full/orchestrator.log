@@ -1,0 +1,66 @@
+campaign=assignment_model-compile_full
+kind=model-compile
+area=section1_3
+device=cuda:1
+smoke=False
+run_count=30
+planned small_forward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode forward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_forward_eager: return_code=0
+planned small_forward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode forward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_forward_compiled: return_code=0
+planned small_forward_backward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode forward_backward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_forward_backward_eager: return_code=0
+planned small_forward_backward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode forward_backward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_forward_backward_compiled: return_code=0
+planned small_train_step_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode train_step --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_train_step_eager: return_code=1
+planned small_train_step_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size small --mode train_step --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished small_train_step_compiled: return_code=0
+planned medium_forward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode forward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_forward_eager: return_code=0
+planned medium_forward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode forward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_forward_compiled: return_code=0
+planned medium_forward_backward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode forward_backward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_forward_backward_eager: return_code=0
+planned medium_forward_backward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode forward_backward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_forward_backward_compiled: return_code=0
+planned medium_train_step_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode train_step --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_train_step_eager: return_code=0
+planned medium_train_step_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size medium --mode train_step --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished medium_train_step_compiled: return_code=0
+planned large_forward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode forward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_forward_eager: return_code=0
+planned large_forward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode forward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_forward_compiled: return_code=0
+planned large_forward_backward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode forward_backward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_forward_backward_eager: return_code=0
+planned large_forward_backward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode forward_backward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_forward_backward_compiled: return_code=0
+planned large_train_step_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode train_step --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_train_step_eager: return_code=0
+planned large_train_step_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size large --mode train_step --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished large_train_step_compiled: return_code=0
+planned xl_forward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode forward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_forward_eager: return_code=0
+planned xl_forward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode forward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_forward_compiled: return_code=0
+planned xl_forward_backward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode forward_backward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_forward_backward_eager: return_code=0
+planned xl_forward_backward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode forward_backward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_forward_backward_compiled: return_code=0
+planned xl_train_step_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode train_step --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_train_step_eager: return_code=1
+planned xl_train_step_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size xl --mode train_step --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished xl_train_step_compiled: return_code=0
+planned 2.7b_forward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode forward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_forward_eager: return_code=0
+planned 2.7b_forward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode forward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_forward_compiled: return_code=0
+planned 2.7b_forward_backward_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode forward_backward --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_forward_backward_eager: return_code=0
+planned 2.7b_forward_backward_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode forward_backward --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_forward_backward_compiled: return_code=0
+planned 2.7b_train_step_eager: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode train_step --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_train_step_eager: return_code=1
+planned 2.7b_train_step_compiled: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python -m cs336_systems.section1.torch_compile --model-size 2.7b --mode train_step --compiled --device cuda:1 --campaign assignment_model-compile_full --output-root data/section1_3
+finished 2.7b_train_step_compiled: return_code=1
