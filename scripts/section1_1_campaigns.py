@@ -29,7 +29,7 @@ def build_nsys_runs(smoke: bool, batch_size: int) -> list[CampaignRun]:
     if smoke:
         return [
             CampaignRun(
-                name="small_ctx128_train_step_fp32",
+                name=f"small_ctx128_bs{batch_size}_train_step_fp32",
                 model_size="small",
                 context_length=128,
                 batch_size=batch_size,
@@ -50,7 +50,7 @@ def build_nsys_runs(smoke: bool, batch_size: int) -> list[CampaignRun]:
             for mode in modes:
                 runs.append(
                     CampaignRun(
-                        name=f"{model_size}_ctx{context_length}_{mode}_fp32",
+                        name=f"{model_size}_ctx{context_length}_bs{batch_size}_{mode}_fp32",
                         model_size=model_size,
                         context_length=context_length,
                         batch_size=batch_size,
@@ -213,6 +213,7 @@ def build_execution_command(
         "--trace=cuda,nvtx,osrt",
         "--sample=none",
         "--force-overwrite=true",
+        "--export=sqlite",
         "-o",
         report_prefix,
         *base_command,
@@ -223,6 +224,21 @@ def build_execution_command(
 def run_campaign(args: argparse.Namespace) -> dict[str, object]:
     campaign = args.campaign or f"assignment_{args.kind}_{'smoke' if args.smoke else 'full'}"
     runs = build_runs(args.kind, smoke=args.smoke, batch_size=args.batch_size)
+
+    # Filter by model sizes if requested (for splitting across GPUs)
+    if getattr(args, "model_sizes", None):
+        allowed = set(args.model_sizes.split(","))
+        runs = [r for r in runs if r.model_size in allowed]
+
+    # Skip runs that already have a completed profile.sqlite (for resuming)
+    if getattr(args, "skip_existing", False):
+        before = len(runs)
+        runs = [
+            r for r in runs
+            if not (Path("data/section1_1") / campaign / r.name / "profile.sqlite").exists()
+        ]
+        print(f"skip_existing: skipping {before - len(runs)} already-complete runs, {len(runs)} remaining")
+
     log_dir, data_dir, analysis_dir = ensure_layout(args.kind, campaign)
 
     plan_payload = {
@@ -301,6 +317,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--nsys-path", default="nsys")
+    parser.add_argument("--model-sizes", default=None,
+                        help="Comma-separated subset of model sizes to run, e.g. small,medium")
+    parser.add_argument("--skip-existing", action="store_true",
+                        help="Skip runs that already have a profile.sqlite")
     return parser.parse_args()
 
 

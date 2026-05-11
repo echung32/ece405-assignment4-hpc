@@ -183,6 +183,10 @@ def _ddp_worker(rank: int, config: DDPBenchmarkConfig, result_path: str) -> None
 
         total_steps = config.warmup_steps + config.measure_steps
         for step_idx in range(total_steps):
+            is_measurement = step_idx >= config.warmup_steps
+            if is_measurement:
+                torch.cuda.nvtx.range_push("measurement")
+
             if hasattr(model, "start_gradient_synchronization"):
                 model.start_gradient_synchronization()
             optimizer.zero_grad(set_to_none=True)
@@ -191,10 +195,17 @@ def _ddp_worker(rank: int, config: DDPBenchmarkConfig, result_path: str) -> None
             inputs, targets = generate_batch(config.batch_size, config.context_length, DEFAULT_VOCAB_SIZE, device)
 
             start = timeit.default_timer()
+
+            torch.cuda.nvtx.range_push("forward")
             logits = model(inputs)
             loss = cross_entropy(logits, targets)
-            loss.backward()
+            torch.cuda.nvtx.range_pop()  # forward
 
+            torch.cuda.nvtx.range_push("backward")
+            loss.backward()
+            torch.cuda.nvtx.range_pop()  # backward
+
+            torch.cuda.nvtx.range_push("comm_sync")
             if config.implementation == "naive":
                 communication_seconds = _sync_gradients_naive(model, config.world_size)
             elif config.implementation == "flat":
@@ -203,12 +214,14 @@ def _ddp_worker(rank: int, config: DDPBenchmarkConfig, result_path: str) -> None
                 comm_start = timeit.default_timer()
                 model.finish_gradient_synchronization()
                 communication_seconds = timeit.default_timer() - comm_start
+            torch.cuda.nvtx.range_pop()  # comm_sync
 
             optimizer.step()
             synchronize_device(device)
             step_seconds = timeit.default_timer() - start
 
-            if step_idx >= config.warmup_steps:
+            if is_measurement:
+                torch.cuda.nvtx.range_pop()  # measurement
                 step_timings.append(step_seconds)
                 communication_timings.append(communication_seconds)
 
