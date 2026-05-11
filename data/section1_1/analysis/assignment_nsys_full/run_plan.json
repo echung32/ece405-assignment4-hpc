@@ -6,295 +6,7 @@
   "smoke": false,
   "runs": [
     {
-      "name": "small_ctx128_forward_fp32",
-      "model_size": "small",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx128_forward_backward_fp32",
-      "model_size": "small",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx128_train_step_fp32",
-      "model_size": "small",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx256_forward_fp32",
-      "model_size": "small",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx256_forward_backward_fp32",
-      "model_size": "small",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx256_train_step_fp32",
-      "model_size": "small",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx512_forward_fp32",
-      "model_size": "small",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx512_forward_backward_fp32",
-      "model_size": "small",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx512_train_step_fp32",
-      "model_size": "small",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx1024_forward_fp32",
-      "model_size": "small",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx1024_forward_backward_fp32",
-      "model_size": "small",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "small_ctx1024_train_step_fp32",
-      "model_size": "small",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx128_forward_fp32",
-      "model_size": "medium",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx128_forward_backward_fp32",
-      "model_size": "medium",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx128_train_step_fp32",
-      "model_size": "medium",
-      "context_length": 128,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx256_forward_fp32",
-      "model_size": "medium",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx256_forward_backward_fp32",
-      "model_size": "medium",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx256_train_step_fp32",
-      "model_size": "medium",
-      "context_length": 256,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx512_forward_fp32",
-      "model_size": "medium",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx512_forward_backward_fp32",
-      "model_size": "medium",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx512_train_step_fp32",
-      "model_size": "medium",
-      "context_length": 512,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx1024_forward_fp32",
-      "model_size": "medium",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "forward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx1024_forward_backward_fp32",
-      "model_size": "medium",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "forward_backward",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "medium_ctx1024_train_step_fp32",
-      "model_size": "medium",
-      "context_length": 1024,
-      "batch_size": 1,
-      "mode": "train_step",
-      "precision": "fp32",
-      "warmup_steps": 5,
-      "measure_steps": 1,
-      "annotate_attention": true,
-      "profile_memory": false
-    },
-    {
-      "name": "large_ctx128_forward_fp32",
+      "name": "large_ctx128_bs1_forward_fp32",
       "model_size": "large",
       "context_length": 128,
       "batch_size": 1,
@@ -306,7 +18,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx128_forward_backward_fp32",
+      "name": "large_ctx128_bs1_forward_backward_fp32",
       "model_size": "large",
       "context_length": 128,
       "batch_size": 1,
@@ -318,7 +30,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx128_train_step_fp32",
+      "name": "large_ctx128_bs1_train_step_fp32",
       "model_size": "large",
       "context_length": 128,
       "batch_size": 1,
@@ -330,7 +42,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx256_forward_fp32",
+      "name": "large_ctx256_bs1_forward_fp32",
       "model_size": "large",
       "context_length": 256,
       "batch_size": 1,
@@ -342,7 +54,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx256_forward_backward_fp32",
+      "name": "large_ctx256_bs1_forward_backward_fp32",
       "model_size": "large",
       "context_length": 256,
       "batch_size": 1,
@@ -354,7 +66,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx256_train_step_fp32",
+      "name": "large_ctx256_bs1_train_step_fp32",
       "model_size": "large",
       "context_length": 256,
       "batch_size": 1,
@@ -366,7 +78,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx512_forward_fp32",
+      "name": "large_ctx512_bs1_forward_fp32",
       "model_size": "large",
       "context_length": 512,
       "batch_size": 1,
@@ -378,7 +90,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx512_forward_backward_fp32",
+      "name": "large_ctx512_bs1_forward_backward_fp32",
       "model_size": "large",
       "context_length": 512,
       "batch_size": 1,
@@ -390,7 +102,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx512_train_step_fp32",
+      "name": "large_ctx512_bs1_train_step_fp32",
       "model_size": "large",
       "context_length": 512,
       "batch_size": 1,
@@ -402,7 +114,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx1024_forward_fp32",
+      "name": "large_ctx1024_bs1_forward_fp32",
       "model_size": "large",
       "context_length": 1024,
       "batch_size": 1,
@@ -414,7 +126,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx1024_forward_backward_fp32",
+      "name": "large_ctx1024_bs1_forward_backward_fp32",
       "model_size": "large",
       "context_length": 1024,
       "batch_size": 1,
@@ -426,7 +138,7 @@
       "profile_memory": false
     },
     {
-      "name": "large_ctx1024_train_step_fp32",
+      "name": "large_ctx1024_bs1_train_step_fp32",
       "model_size": "large",
       "context_length": 1024,
       "batch_size": 1,
@@ -438,7 +150,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx128_forward_fp32",
+      "name": "xl_ctx128_bs1_forward_fp32",
       "model_size": "xl",
       "context_length": 128,
       "batch_size": 1,
@@ -450,7 +162,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx128_forward_backward_fp32",
+      "name": "xl_ctx128_bs1_forward_backward_fp32",
       "model_size": "xl",
       "context_length": 128,
       "batch_size": 1,
@@ -462,7 +174,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx128_train_step_fp32",
+      "name": "xl_ctx128_bs1_train_step_fp32",
       "model_size": "xl",
       "context_length": 128,
       "batch_size": 1,
@@ -474,7 +186,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx256_forward_fp32",
+      "name": "xl_ctx256_bs1_forward_fp32",
       "model_size": "xl",
       "context_length": 256,
       "batch_size": 1,
@@ -486,7 +198,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx256_forward_backward_fp32",
+      "name": "xl_ctx256_bs1_forward_backward_fp32",
       "model_size": "xl",
       "context_length": 256,
       "batch_size": 1,
@@ -498,7 +210,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx256_train_step_fp32",
+      "name": "xl_ctx256_bs1_train_step_fp32",
       "model_size": "xl",
       "context_length": 256,
       "batch_size": 1,
@@ -510,7 +222,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx512_forward_fp32",
+      "name": "xl_ctx512_bs1_forward_fp32",
       "model_size": "xl",
       "context_length": 512,
       "batch_size": 1,
@@ -522,7 +234,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx512_forward_backward_fp32",
+      "name": "xl_ctx512_bs1_forward_backward_fp32",
       "model_size": "xl",
       "context_length": 512,
       "batch_size": 1,
@@ -534,7 +246,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx512_train_step_fp32",
+      "name": "xl_ctx512_bs1_train_step_fp32",
       "model_size": "xl",
       "context_length": 512,
       "batch_size": 1,
@@ -546,7 +258,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx1024_forward_fp32",
+      "name": "xl_ctx1024_bs1_forward_fp32",
       "model_size": "xl",
       "context_length": 1024,
       "batch_size": 1,
@@ -558,7 +270,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx1024_forward_backward_fp32",
+      "name": "xl_ctx1024_bs1_forward_backward_fp32",
       "model_size": "xl",
       "context_length": 1024,
       "batch_size": 1,
@@ -570,7 +282,7 @@
       "profile_memory": false
     },
     {
-      "name": "xl_ctx1024_train_step_fp32",
+      "name": "xl_ctx1024_bs1_train_step_fp32",
       "model_size": "xl",
       "context_length": 1024,
       "batch_size": 1,
@@ -582,7 +294,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx128_forward_fp32",
+      "name": "2.7b_ctx128_bs1_forward_fp32",
       "model_size": "2.7b",
       "context_length": 128,
       "batch_size": 1,
@@ -594,7 +306,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx128_forward_backward_fp32",
+      "name": "2.7b_ctx128_bs1_forward_backward_fp32",
       "model_size": "2.7b",
       "context_length": 128,
       "batch_size": 1,
@@ -606,7 +318,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx128_train_step_fp32",
+      "name": "2.7b_ctx128_bs1_train_step_fp32",
       "model_size": "2.7b",
       "context_length": 128,
       "batch_size": 1,
@@ -618,7 +330,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx256_forward_fp32",
+      "name": "2.7b_ctx256_bs1_forward_fp32",
       "model_size": "2.7b",
       "context_length": 256,
       "batch_size": 1,
@@ -630,7 +342,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx256_forward_backward_fp32",
+      "name": "2.7b_ctx256_bs1_forward_backward_fp32",
       "model_size": "2.7b",
       "context_length": 256,
       "batch_size": 1,
@@ -642,7 +354,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx256_train_step_fp32",
+      "name": "2.7b_ctx256_bs1_train_step_fp32",
       "model_size": "2.7b",
       "context_length": 256,
       "batch_size": 1,
@@ -654,7 +366,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx512_forward_fp32",
+      "name": "2.7b_ctx512_bs1_forward_fp32",
       "model_size": "2.7b",
       "context_length": 512,
       "batch_size": 1,
@@ -666,7 +378,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx512_forward_backward_fp32",
+      "name": "2.7b_ctx512_bs1_forward_backward_fp32",
       "model_size": "2.7b",
       "context_length": 512,
       "batch_size": 1,
@@ -678,7 +390,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx512_train_step_fp32",
+      "name": "2.7b_ctx512_bs1_train_step_fp32",
       "model_size": "2.7b",
       "context_length": 512,
       "batch_size": 1,
@@ -690,7 +402,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx1024_forward_fp32",
+      "name": "2.7b_ctx1024_bs1_forward_fp32",
       "model_size": "2.7b",
       "context_length": 1024,
       "batch_size": 1,
@@ -702,7 +414,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx1024_forward_backward_fp32",
+      "name": "2.7b_ctx1024_bs1_forward_backward_fp32",
       "model_size": "2.7b",
       "context_length": 1024,
       "batch_size": 1,
@@ -714,7 +426,7 @@
       "profile_memory": false
     },
     {
-      "name": "2.7b_ctx1024_train_step_fp32",
+      "name": "2.7b_ctx1024_bs1_train_step_fp32",
       "model_size": "2.7b",
       "context_length": 1024,
       "batch_size": 1,

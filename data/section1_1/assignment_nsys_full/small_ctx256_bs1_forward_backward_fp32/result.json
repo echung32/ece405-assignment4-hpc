@@ -7,7 +7,7 @@
     "warmup_steps": 5,
     "measure_steps": 1,
     "precision": "fp32",
-    "device": "cuda:1",
+    "device": "cuda:0",
     "seed": 0,
     "vram_limit_gb": 50.0,
     "profile_memory": false,
@@ -23,14 +23,14 @@
     "num_heads": 12
   },
   "timings_seconds": [
-    0.03790567099349573
+    0.04944933904334903
   ],
-  "mean_seconds": 0.03790567099349573,
+  "mean_seconds": 0.04944933904334903,
   "stdev_seconds": 0.0,
-  "peak_reserved_bytes": 1348468736,
-  "peak_reserved_gb": 1.255859375,
-  "peak_device_used_bytes": 1348468736,
-  "peak_device_used_gb": 1.255859375,
+  "peak_reserved_bytes": 1337982976,
+  "peak_reserved_gb": 1.24609375,
+  "peak_device_used_bytes": 1337982976,
+  "peak_device_used_gb": 1.24609375,
   "snapshot_path": null,
   "parameter_count": 128625408,
   "loss": 9.292584419250488

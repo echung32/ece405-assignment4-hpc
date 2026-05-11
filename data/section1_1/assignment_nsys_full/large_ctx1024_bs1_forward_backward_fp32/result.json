@@ -23,14 +23,14 @@
     "num_heads": 20
   },
   "timings_seconds": [
-    0.6998050649999641
+    0.5303414150839671
   ],
-  "mean_seconds": 0.6998050649999641,
+  "mean_seconds": 0.5303414150839671,
   "stdev_seconds": 0.0,
-  "peak_reserved_bytes": 16412311552,
-  "peak_reserved_gb": 15.28515625,
-  "peak_device_used_bytes": 16412311552,
-  "peak_device_used_gb": 15.28515625,
+  "peak_reserved_bytes": 16496197632,
+  "peak_reserved_gb": 15.36328125,
+  "peak_device_used_bytes": 16496197632,
+  "peak_device_used_gb": 15.36328125,
   "snapshot_path": null,
   "parameter_count": 969411840,
   "loss": 9.30348014831543

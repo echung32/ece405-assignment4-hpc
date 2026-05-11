@@ -23,9 +23,9 @@
     "num_heads": 32
   },
   "timings_seconds": [
-    0.3058048200036865
+    0.2044966850662604
   ],
-  "mean_seconds": 0.3058048200036865,
+  "mean_seconds": 0.2044966850662604,
   "stdev_seconds": 0.0,
   "peak_reserved_bytes": 13960740864,
   "peak_reserved_gb": 13.001953125,

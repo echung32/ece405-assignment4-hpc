@@ -7,7 +7,7 @@
     "warmup_steps": 5,
     "measure_steps": 1,
     "precision": "fp32",
-    "device": "cuda:1",
+    "device": "cuda:0",
     "seed": 0,
     "vram_limit_gb": 50.0,
     "profile_memory": false,
@@ -23,9 +23,9 @@
     "num_heads": 12
   },
   "timings_seconds": [
-    0.017643976025283337
+    0.018048413912765682
   ],
-  "mean_seconds": 0.017643976025283337,
+  "mean_seconds": 0.018048413912765682,
   "stdev_seconds": 0.0,
   "peak_reserved_bytes": 662700032,
   "peak_reserved_gb": 0.6171875,
