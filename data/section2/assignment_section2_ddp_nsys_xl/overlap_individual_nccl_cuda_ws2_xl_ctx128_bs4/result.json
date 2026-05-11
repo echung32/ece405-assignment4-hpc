@@ -1,0 +1,45 @@
+{
+  "config": {
+    "implementation": "overlap_individual",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 2,
+    "measure_steps": 2,
+    "bucket_size_mb": 25.0,
+    "master_port": 29801,
+    "campaign": "assignment_section2_ddp_nsys_xl",
+    "output_root": "data/section2"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "step_timings_seconds": [
+    2.245560138951987,
+    2.198907495010644
+  ],
+  "communication_timings_seconds": [
+    0.003145418013446033,
+    0.0035447770496830344
+  ],
+  "step": {
+    "mean_seconds": 2.2222338169813156,
+    "stdev_seconds": 0.032988400891205014,
+    "min_seconds": 2.198907495010644,
+    "max_seconds": 2.245560138951987
+  },
+  "communication": {
+    "mean_seconds": 0.0033450975315645337,
+    "stdev_seconds": 0.0002823894826513079,
+    "min_seconds": 0.003145418013446033,
+    "max_seconds": 0.0035447770496830344
+  }
+}

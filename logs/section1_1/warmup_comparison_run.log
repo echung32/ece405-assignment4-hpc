@@ -1,0 +1,24 @@
+{
+  "campaign": "assignment_warmup_w0_full",
+  "warmup_steps": 0,
+  "run_count": 8,
+  "manifest_path": "data/section1_1/analysis/assignment_warmup_w0_full/campaign_manifest.json"
+}
+{
+  "campaign": "assignment_warmup_w1_full",
+  "warmup_steps": 1,
+  "run_count": 8,
+  "manifest_path": "data/section1_1/analysis/assignment_warmup_w1_full/campaign_manifest.json"
+}
+{
+  "campaign": "assignment_warmup_w2_full",
+  "warmup_steps": 2,
+  "run_count": 8,
+  "manifest_path": "data/section1_1/analysis/assignment_warmup_w2_full/campaign_manifest.json"
+}
+{
+  "campaign": "assignment_warmup_w5_full",
+  "warmup_steps": 5,
+  "run_count": 8,
+  "manifest_path": "data/section1_1/analysis/assignment_warmup_w5_full/campaign_manifest.json"
+}

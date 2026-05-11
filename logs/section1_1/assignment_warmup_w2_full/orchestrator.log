@@ -1,0 +1,20 @@
+campaign=assignment_warmup_w2_full
+warmup_steps=2
+device=cuda:0
+run_count=8
+planned small_ctx128_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 128 --batch-size 1 --mode forward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx128_forward_fp32: return_code=0
+planned small_ctx128_forward_backward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 128 --batch-size 1 --mode forward_backward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx128_forward_backward_fp32: return_code=0
+planned small_ctx256_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 256 --batch-size 1 --mode forward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx256_forward_fp32: return_code=0
+planned small_ctx256_forward_backward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 256 --batch-size 1 --mode forward_backward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx256_forward_backward_fp32: return_code=0
+planned small_ctx512_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 512 --batch-size 1 --mode forward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx512_forward_fp32: return_code=0
+planned small_ctx512_forward_backward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 512 --batch-size 1 --mode forward_backward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx512_forward_backward_fp32: return_code=0
+planned small_ctx1024_forward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 1024 --batch-size 1 --mode forward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx1024_forward_fp32: return_code=0
+planned small_ctx1024_forward_backward_fp32: /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section1.benchmarking_script --model-size small --context-length 1024 --batch-size 1 --mode forward_backward --warmup-steps 2 --measure-steps 10 --precision fp32 --device cuda:0 --campaign assignment_warmup_w2_full --output-root data/section1_1
+finished small_ctx1024_forward_backward_fp32: return_code=0

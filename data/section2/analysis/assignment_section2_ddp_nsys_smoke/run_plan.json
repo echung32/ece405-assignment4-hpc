@@ -1,0 +1,18 @@
+{
+  "campaign": "assignment_section2_ddp_nsys_smoke",
+  "smoke": true,
+  "runs": [
+    {
+      "name": "ddp_naive_small_ctx128",
+      "implementation": "naive",
+      "model_size": "small",
+      "context_length": 128
+    },
+    {
+      "name": "ddp_overlap_individual_small_ctx128",
+      "implementation": "overlap_individual",
+      "model_size": "small",
+      "context_length": 128
+    }
+  ]
+}

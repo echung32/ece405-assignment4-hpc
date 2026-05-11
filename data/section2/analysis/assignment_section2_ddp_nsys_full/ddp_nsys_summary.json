@@ -1,0 +1,253 @@
+{
+  "campaign": "assignment_section2_ddp_nsys_full",
+  "profiles": [
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_full/naive_nccl_cuda_ws2_medium_ctx128_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 513.875207,
+          "bwd_dur_ms": 182.991689,
+          "sync_dur_ms": 16.594238,
+          "bwd_total_kernels": 4881,
+          "bwd_nccl_kernels": 1,
+          "bwd_compute_kernels": 4880,
+          "bwd_nccl_pct": 0.02048760499897562,
+          "sync_nccl_kernels": 14
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 39.032073,
+          "bwd_dur_ms": 39.026974,
+          "sync_dur_ms": 11.81172,
+          "bwd_total_kernels": 3372,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 3372,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 39.425982,
+          "bwd_dur_ms": 38.335507,
+          "sync_dur_ms": 12.546427,
+          "bwd_total_kernels": 3209,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 3209,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 36.287527,
+          "bwd_dur_ms": 40.786824,
+          "sync_dur_ms": 13.488453,
+          "bwd_total_kernels": 3458,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 3458,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 37.856754499999994,
+        "avg_bwd_ms": 39.5611655,
+        "avg_sync_ms": 13.01744,
+        "avg_nccl_pct_during_bwd": 0.0,
+        "overlap_fraction": 0
+      },
+      "run_name": "naive_nccl_cuda_ws2_medium_ctx128_bs4"
+    },
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_full/naive_nccl_cuda_ws2_medium_ctx256_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 516.658897,
+          "bwd_dur_ms": 212.903981,
+          "sync_dur_ms": 14.963159,
+          "bwd_total_kernels": 4881,
+          "bwd_nccl_kernels": 1,
+          "bwd_compute_kernels": 4880,
+          "bwd_nccl_pct": 0.02048760499897562,
+          "sync_nccl_kernels": 2
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 43.473472,
+          "bwd_dur_ms": 89.663368,
+          "sync_dur_ms": 21.303439,
+          "bwd_total_kernels": 4047,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 4047,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 38.812682,
+          "bwd_dur_ms": 97.044609,
+          "sync_dur_ms": 19.660878,
+          "bwd_total_kernels": 4447,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 4447,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 36.551802,
+          "bwd_dur_ms": 98.028244,
+          "sync_dur_ms": 12.53749,
+          "bwd_total_kernels": 4446,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 4446,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 37.682242,
+        "avg_bwd_ms": 97.5364265,
+        "avg_sync_ms": 16.099184,
+        "avg_nccl_pct_during_bwd": 0.0,
+        "overlap_fraction": 0
+      },
+      "run_name": "naive_nccl_cuda_ws2_medium_ctx256_bs4"
+    },
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_full/overlap_individual_nccl_cuda_ws2_medium_ctx128_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 501.251004,
+          "bwd_dur_ms": 449.000312,
+          "sync_dur_ms": 1.413351,
+          "bwd_total_kernels": 5753,
+          "bwd_nccl_kernels": 437,
+          "bwd_compute_kernels": 5316,
+          "bwd_nccl_pct": 7.596036850338954,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 40.658934,
+          "bwd_dur_ms": 69.141795,
+          "sync_dur_ms": 1.779346,
+          "bwd_total_kernels": 5188,
+          "bwd_nccl_kernels": 60,
+          "bwd_compute_kernels": 5128,
+          "bwd_nccl_pct": 1.1565150346954511,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 36.901588,
+          "bwd_dur_ms": 65.902973,
+          "sync_dur_ms": 1.308333,
+          "bwd_total_kernels": 4993,
+          "bwd_nccl_kernels": 60,
+          "bwd_compute_kernels": 4933,
+          "bwd_nccl_pct": 1.2016823552974163,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 35.78234,
+          "bwd_dur_ms": 71.130185,
+          "sync_dur_ms": 2.003698,
+          "bwd_total_kernels": 5020,
+          "bwd_nccl_kernels": 60,
+          "bwd_compute_kernels": 4960,
+          "bwd_nccl_pct": 1.1952191235059761,
+          "sync_nccl_kernels": 0
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 36.341964,
+        "avg_bwd_ms": 68.51657900000001,
+        "avg_sync_ms": 1.6560155,
+        "avg_nccl_pct_during_bwd": 1.198450739401696,
+        "overlap_fraction": 1.0
+      },
+      "run_name": "overlap_individual_nccl_cuda_ws2_medium_ctx128_bs4"
+    },
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_full/overlap_individual_nccl_cuda_ws2_medium_ctx256_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 513.488492,
+          "bwd_dur_ms": 514.550072,
+          "sync_dur_ms": 2.4261,
+          "bwd_total_kernels": 5753,
+          "bwd_nccl_kernels": 437,
+          "bwd_compute_kernels": 5316,
+          "bwd_nccl_pct": 7.596036850338954,
+          "sync_nccl_kernels": 1
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 42.975669,
+          "bwd_dur_ms": 100.66055,
+          "sync_dur_ms": 1.93568,
+          "bwd_total_kernels": 4642,
+          "bwd_nccl_kernels": 63,
+          "bwd_compute_kernels": 4579,
+          "bwd_nccl_pct": 1.3571736320551486,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 35.829067,
+          "bwd_dur_ms": 100.854003,
+          "sync_dur_ms": 2.39971,
+          "bwd_total_kernels": 5011,
+          "bwd_nccl_kernels": 64,
+          "bwd_compute_kernels": 4947,
+          "bwd_nccl_pct": 1.277190181600479,
+          "sync_nccl_kernels": 10
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 36.24616,
+          "bwd_dur_ms": 93.821696,
+          "sync_dur_ms": 1.904181,
+          "bwd_total_kernels": 4471,
+          "bwd_nccl_kernels": 51,
+          "bwd_compute_kernels": 4420,
+          "bwd_nccl_pct": 1.1406844106463878,
+          "sync_nccl_kernels": 0
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 36.037613500000006,
+        "avg_bwd_ms": 97.3378495,
+        "avg_sync_ms": 2.1519455,
+        "avg_nccl_pct_during_bwd": 1.2089372961234335,
+        "overlap_fraction": 0.92
+      },
+      "run_name": "overlap_individual_nccl_cuda_ws2_medium_ctx256_bs4"
+    }
+  ]
+}

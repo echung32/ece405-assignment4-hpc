@@ -1,0 +1,97 @@
+{
+  "mode": "train_step",
+  "ctx": 128,
+  "total_gpu_ms": 283.973,
+  "top_kernels": [
+    {
+      "name": "Optimizer.step#AdamW.step",
+      "count": 3,
+      "self_cuda_ms": 62.296,
+      "pct": 21.94
+    },
+    {
+      "name": "forward",
+      "count": 3,
+      "self_cuda_ms": 44.871,
+      "pct": 15.8
+    },
+    {
+      "name": "aten::bmm",
+      "count": 981,
+      "self_cuda_ms": 16.717,
+      "pct": 5.89
+    },
+    {
+      "name": "aten::_foreach_lerp_",
+      "count": 3,
+      "self_cuda_ms": 15.251,
+      "pct": 5.37
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::TernaryOpScalarFunctor<float, 2, 2, 0>, at::native::LerpFunctor<float>, float)",
+      "count": 30,
+      "self_cuda_ms": 15.251,
+      "pct": 5.37
+    },
+    {
+      "name": "aten::_foreach_addcdiv_",
+      "count": 3,
+      "self_cuda_ms": 10.49,
+      "pct": 3.69
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float> >(at::native::(anonymous namespace)::TensorListScalarListMetadata<float, 3>, at::native::(anonymous namespace)::PointwiseOpScalarListFunctor<float, 3, 3, 0>, std::divides<float>)",
+      "count": 30,
+      "self_cuda_ms": 10.49,
+      "pct": 3.69
+    },
+    {
+      "name": "aten::_foreach_addcmul_",
+      "count": 3,
+      "self_cuda_ms": 8.996,
+      "pct": 3.17
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<3>, at::native::(anonymous namespace)::PointwiseOpScalarFunctor<float, 3, 3, 0>, std::multiplies<float>, float)",
+      "count": 30,
+      "self_cuda_ms": 8.996,
+      "pct": 3.17
+    },
+    {
+      "name": "aten::_foreach_sqrt",
+      "count": 3,
+      "self_cuda_ms": 6.546,
+      "pct": 2.31
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<float, 2, 1, 1>, at::native::Sqrt<float>)",
+      "count": 30,
+      "self_cuda_ms": 6.546,
+      "pct": 2.31
+    },
+    {
+      "name": "aten::_foreach_add_",
+      "count": 6,
+      "self_cuda_ms": 6.527,
+      "pct": 2.3
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::plus<float>, float)",
+      "count": 30,
+      "self_cuda_ms": 6.527,
+      "pct": 2.3
+    },
+    {
+      "name": "aten::_foreach_mul_",
+      "count": 6,
+      "self_cuda_ms": 6.142,
+      "pct": 2.16
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float>(at::native::(anonymous namespace)::TensorListMetadata<1>, at::native::(anonymous namespace)::BinaryOpScalarFunctor<float, 1, 1, 0>, std::multiplies<float>, float)",
+      "count": 60,
+      "self_cuda_ms": 6.142,
+      "pct": 2.16
+    }
+  ]
+}

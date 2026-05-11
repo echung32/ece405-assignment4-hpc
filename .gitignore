@@ -3,6 +3,7 @@ models/
 data/
 logs/
 slurm-logs/
+report/out
 
 wandb/
 

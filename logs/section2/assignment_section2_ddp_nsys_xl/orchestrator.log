@@ -1,0 +1,7 @@
+campaign=assignment_section2_ddp_nsys_xl
+smoke=False
+run_count=2
+planned ddp_naive_xl_ctx128: /usr/local/bin/nsys profile --trace=cuda,nvtx,nccl --sample=none --force-overwrite=true --export=sqlite -o data/section2/assignment_section2_ddp_nsys_xl/naive_nccl_cuda_ws2_xl_ctx128_bs4/profile /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section2.benchmarks ddp --implementation naive --backend nccl --device-type cuda --world-size 2 --model-size xl --context-length 128 --batch-size 4 --warmup-steps 2 --measure-steps 2 --campaign assignment_section2_ddp_nsys_xl --output-root data/section2 --master-port 29800
+finished ddp_naive_xl_ctx128: return_code=0
+planned ddp_overlap_individual_xl_ctx128: /usr/local/bin/nsys profile --trace=cuda,nvtx,nccl --sample=none --force-overwrite=true --export=sqlite -o data/section2/assignment_section2_ddp_nsys_xl/overlap_individual_nccl_cuda_ws2_xl_ctx128_bs4/profile /home/ethan/github/ece405-assignment4-hpc/.venv/bin/python3 -m cs336_systems.section2.benchmarks ddp --implementation overlap_individual --backend nccl --device-type cuda --world-size 2 --model-size xl --context-length 128 --batch-size 4 --warmup-steps 2 --measure-steps 2 --campaign assignment_section2_ddp_nsys_xl --output-root data/section2 --master-port 29801
+finished ddp_overlap_individual_xl_ctx128: return_code=0

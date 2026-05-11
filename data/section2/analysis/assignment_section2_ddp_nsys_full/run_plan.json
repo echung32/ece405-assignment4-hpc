@@ -1,0 +1,30 @@
+{
+  "campaign": "assignment_section2_ddp_nsys_full",
+  "smoke": false,
+  "runs": [
+    {
+      "name": "ddp_naive_medium_ctx128",
+      "implementation": "naive",
+      "model_size": "medium",
+      "context_length": 128
+    },
+    {
+      "name": "ddp_naive_medium_ctx256",
+      "implementation": "naive",
+      "model_size": "medium",
+      "context_length": 256
+    },
+    {
+      "name": "ddp_overlap_individual_medium_ctx128",
+      "implementation": "overlap_individual",
+      "model_size": "medium",
+      "context_length": 128
+    },
+    {
+      "name": "ddp_overlap_individual_medium_ctx256",
+      "implementation": "overlap_individual",
+      "model_size": "medium",
+      "context_length": 256
+    }
+  ]
+}

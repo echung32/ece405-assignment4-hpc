@@ -1,0 +1,23 @@
+{
+  "mode": "attention_ops",
+  "ctx": 128,
+  "d_head": 64,
+  "heads": 12,
+  "ops": {
+    "qk_matmul": {
+      "count": 10,
+      "cuda_ms": 0.0763,
+      "self_cuda_ms": 0.0763
+    },
+    "softmax": {
+      "count": 10,
+      "cuda_ms": 0.0171,
+      "self_cuda_ms": 0.0171
+    },
+    "av_matmul": {
+      "count": 10,
+      "cuda_ms": 0.0648,
+      "self_cuda_ms": 0.0648
+    }
+  }
+}

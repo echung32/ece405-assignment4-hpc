@@ -1,0 +1,129 @@
+{
+  "campaign": "assignment_section2_ddp_nsys_xl",
+  "profiles": [
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_xl/naive_nccl_cuda_ws2_xl_ctx128_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 603.988729,
+          "bwd_dur_ms": 256.944256,
+          "sync_dur_ms": 26.020775,
+          "bwd_total_kernels": 8574,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 8574,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 1
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 86.63502,
+          "bwd_dur_ms": 253.999384,
+          "sync_dur_ms": 33.224293,
+          "bwd_total_kernels": 9201,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 9201,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 105.201646,
+          "bwd_dur_ms": 259.245091,
+          "sync_dur_ms": 44.446808,
+          "bwd_total_kernels": 9814,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 9814,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 87.992725,
+          "bwd_dur_ms": 251.583323,
+          "sync_dur_ms": 43.87228,
+          "bwd_total_kernels": 9212,
+          "bwd_nccl_kernels": 0,
+          "bwd_compute_kernels": 9212,
+          "bwd_nccl_pct": 0.0,
+          "sync_nccl_kernels": 0
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 96.5971855,
+        "avg_bwd_ms": 255.414207,
+        "avg_sync_ms": 44.159544,
+        "avg_nccl_pct_during_bwd": 0.0,
+        "overlap_fraction": 0
+      },
+      "run_name": "naive_nccl_cuda_ws2_xl_ctx128_bs4"
+    },
+    {
+      "db_path": "data/section2/assignment_section2_ddp_nsys_xl/overlap_individual_nccl_cuda_ws2_xl_ctx128_bs4/profile.sqlite",
+      "steps": [
+        {
+          "step": 0,
+          "is_measurement": false,
+          "fwd_dur_ms": 590.585454,
+          "bwd_dur_ms": 1960.051709,
+          "sync_dur_ms": 3.145047,
+          "bwd_total_kernels": 11413,
+          "bwd_nccl_kernels": 868,
+          "bwd_compute_kernels": 10545,
+          "bwd_nccl_pct": 7.605362306142118,
+          "sync_nccl_kernels": 2
+        },
+        {
+          "step": 1,
+          "is_measurement": false,
+          "fwd_dur_ms": 104.704363,
+          "bwd_dur_ms": 285.293307,
+          "sync_dur_ms": 4.362009,
+          "bwd_total_kernels": 10822,
+          "bwd_nccl_kernels": 89,
+          "bwd_compute_kernels": 10733,
+          "bwd_nccl_pct": 0.822398817224173,
+          "sync_nccl_kernels": 6
+        },
+        {
+          "step": 2,
+          "is_measurement": true,
+          "fwd_dur_ms": 102.37218,
+          "bwd_dur_ms": 268.715209,
+          "sync_dur_ms": 2.586671,
+          "bwd_total_kernels": 10531,
+          "bwd_nccl_kernels": 98,
+          "bwd_compute_kernels": 10433,
+          "bwd_nccl_pct": 0.9305858892792708,
+          "sync_nccl_kernels": 0
+        },
+        {
+          "step": 3,
+          "is_measurement": true,
+          "fwd_dur_ms": 101.377064,
+          "bwd_dur_ms": 277.040089,
+          "sync_dur_ms": 3.372374,
+          "bwd_total_kernels": 10445,
+          "bwd_nccl_kernels": 82,
+          "bwd_compute_kernels": 10363,
+          "bwd_nccl_pct": 0.7850646242221159,
+          "sync_nccl_kernels": 2
+        }
+      ],
+      "summary": {
+        "n_measurement_steps": 2,
+        "avg_fwd_ms": 101.874622,
+        "avg_bwd_ms": 272.877649,
+        "avg_sync_ms": 2.9795225,
+        "avg_nccl_pct_during_bwd": 0.8578252567506933,
+        "overlap_fraction": 0.989010989010989
+      },
+      "run_name": "overlap_individual_nccl_cuda_ws2_xl_ctx128_bs4"
+    }
+  ]
+}

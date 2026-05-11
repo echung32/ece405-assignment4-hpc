@@ -1,0 +1,21 @@
+\begin{table}[h!]
+\centering
+\caption{Effect of warm-up steps on mean timing (ms) for the small model, FP32, batch size 1. ``Steady'' shows the mean of steps 2--10 only (excluding the cold-start first step).}
+\label{tab:warmup_comparison}
+\begin{tabular}{ll|rrrr|rrrr}
+\hline
+& & \multicolumn{4}{c|}{All-steps mean (ms)} & \multicolumn{4}{c}{Steady-state mean (ms, steps 2--10)} \\
+Mode & Ctx & $w{=}0$ & $w{=}1$ & $w{=}2$ & $w{=}5$ & $w{=}0$ & $w{=}1$ & $w{=}2$ & $w{=}5$ \\
+\hline
+	Forward & 128 & 51.0 & 14.8 & 14.3 & 13.9 & 15.4 & 14.9 & 14.2 & 14.0 \\
+	Forward & 256 & 54.3 & 15.7 & 14.0 & 14.4 & 15.5 & 15.3 & 14.1 & 14.3 \\
+	Forward & 512 & 56.5 & 18.0 & 19.8 & 18.5 & 17.9 & 18.0 & 20.1 & 18.7 \\
+	Forward & 1024 & 69.6 & 32.3 & 31.1 & 32.7 & 31.7 & 32.1 & 31.6 & 33.4 \\
+\hline
+	Fwd+Bwd & 128 & 86.5 & 35.1 & 34.1 & 35.9 & 33.7 & 34.6 & 33.6 & 35.9 \\
+	Fwd+Bwd & 256 & 92.0 & 40.2 & 39.6 & 38.8 & 41.0 & 40.9 & 39.8 & 38.3 \\
+	Fwd+Bwd & 512 & 105.2 & 54.6 & 53.4 & 57.7 & 52.6 & 55.6 & 52.5 & 57.1 \\
+	Fwd+Bwd & 1024 & 141.2 & 93.4 & 92.1 & 93.4 & 92.6 & 94.1 & 92.1 & 93.1 \\
+\hline
+\end{tabular}
+\end{table}

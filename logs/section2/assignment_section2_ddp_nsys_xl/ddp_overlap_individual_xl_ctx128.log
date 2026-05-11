@@ -1,0 +1,58 @@
+WARNING: The version of the system or its configuration does not allow enabling CPU profiling:
+- CPU context switch tracing will be disabled.
+Try the 'nsys status --environment' command to learn more.
+
+/home/ethan/github/ece405-assignment4-hpc/.venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+{
+  "config": {
+    "implementation": "overlap_individual",
+    "backend": "nccl",
+    "device_type": "cuda",
+    "world_size": 2,
+    "model_size": "xl",
+    "context_length": 128,
+    "batch_size": 4,
+    "warmup_steps": 2,
+    "measure_steps": 2,
+    "bucket_size_mb": 25.0,
+    "master_port": 29801,
+    "campaign": "assignment_section2_ddp_nsys_xl",
+    "output_root": "data/section2"
+  },
+  "model_spec": {
+    "name": "xl",
+    "d_model": 1600,
+    "d_ff": 6400,
+    "num_layers": 48,
+    "num_heads": 25
+  },
+  "status": "ok",
+  "step_timings_seconds": [
+    2.245560138951987,
+    2.198907495010644
+  ],
+  "communication_timings_seconds": [
+    0.003145418013446033,
+    0.0035447770496830344
+  ],
+  "step": {
+    "mean_seconds": 2.2222338169813156,
+    "stdev_seconds": 0.032988400891205014,
+    "min_seconds": 2.198907495010644,
+    "max_seconds": 2.245560138951987
+  },
+  "communication": {
+    "mean_seconds": 0.0033450975315645337,
+    "stdev_seconds": 0.0002823894826513079,
+    "min_seconds": 0.003145418013446033,
+    "max_seconds": 0.0035447770496830344
+  }
+}
+Collecting data...
+Generating '/tmp/nsys-ethan/nsys-report-10ae.qdstrm'
+[1/2] [0%                          ] profile.nsys-rep[1/2] [0%                          ] profile.nsys-rep[1/2] [13%                         ] profile.nsys-rep[1/2] [10%                         ] profile.nsys-rep[1/2] [8%                          ] profile.nsys-rep[1/2] [13%                         ] profile.nsys-rep[1/2] [=17%                        ] profile.nsys-rep[1/2] [14%                         ] profile.nsys-rep[1/2] [=15%                        ] profile.nsys-rep[1/2] [13%                         ] profile.nsys-rep[1/2] [==19%                       ] profile.nsys-rep[1/2] [=17%                        ] profile.nsys-rep[1/2] [=15%                        ] profile.nsys-rep[1/2] [13%                         ] profile.nsys-rep[1/2] [12%                         ] profile.nsys-rep[1/2] [11%                         ] profile.nsys-rep[1/2] [10%                         ] profile.nsys-rep[1/2] [9%                          ] profile.nsys-rep[1/2] [8%                          ] profile.nsys-rep[1/2] [7%                          ] profile.nsys-rep[1/2] [6%                          ] profile.nsys-rep[1/2] [5%                          ] profile.nsys-rep[1/2] [5%                          ] profile.nsys-rep[1/2] [6%                          ] profile.nsys-rep[1/2] [7%                          ] profile.nsys-rep[1/2] [9%                          ] profile.nsys-rep[1/2] [10%                         ] profile.nsys-rep[1/2] [12%                         ] profile.nsys-rep[1/2] [13%                         ] profile.nsys-rep[1/2] [=15%                        ] profile.nsys-rep[1/2] [=16%                        ] profile.nsys-rep[1/2] [=17%                        ] profile.nsys-rep[1/2] [==19%                       ] profile.nsys-rep[1/2] [==20%                       ] profile.nsys-rep[1/2] [===22%                      ] profile.nsys-rep[1/2] [===23%                      ] profile.nsys-rep[1/2] [====25%                     ] profile.nsys-rep[1/2] [====26%                     ] profile.nsys-rep[1/2] [====28%                     ] profile.nsys-rep[1/2] [=====29%                    ] profile.nsys-rep[1/2] [=====31%                    ] profile.nsys-rep[1/2] [=====32%                    ] profile.nsys-rep[1/2] [======33%                   ] profile.nsys-rep[1/2] [======35%                   ] profile.nsys-rep[1/2] [=======36%                  ] profile.nsys-rep[1/2] [=======38%                  ] profile.nsys-rep[1/2] [=======39%                  ] profile.nsys-rep[1/2] [========41%                 ] profile.nsys-rep[1/2] [========42%                 ] profile.nsys-rep[1/2] [=========44%                ] profile.nsys-rep[1/2] [=========45%                ] profile.nsys-rep[1/2] [=========46%                ] profile.nsys-rep[1/2] [==========48%               ] profile.nsys-rep[1/2] [==========49%               ] profile.nsys-rep[1/2] [===========50%              ] profile.nsys-rep[1/2] [========================100%] profile.nsys-rep[1/2] [========================100%] profile.nsys-rep
+[2/2] [0%                          ] profile.sqlite[2/2] [1%                          ] profile.sqlite[2/2] [2%                          ] profile.sqlite[2/2] [3%                          ] profile.sqlite[2/2] [4%                          ] profile.sqlite[2/2] [5%                          ] profile.sqlite[2/2] [6%                          ] profile.sqlite[2/2] [7%                          ] profile.sqlite[2/2] [8%                          ] profile.sqlite[2/2] [9%                          ] profile.sqlite[2/2] [10%                         ] profile.sqlite[2/2] [11%                         ] profile.sqlite[2/2] [12%                         ] profile.sqlite[2/2] [13%                         ] profile.sqlite[2/2] [14%                         ] profile.sqlite[2/2] [=15%                        ] profile.sqlite[2/2] [=16%                        ] profile.sqlite[2/2] [=17%                        ] profile.sqlite[2/2] [==18%                       ] profile.sqlite[2/2] [==19%                       ] profile.sqlite[2/2] [==20%                       ] profile.sqlite[2/2] [==21%                       ] profile.sqlite[2/2] [===22%                      ] profile.sqlite[2/2] [===23%                      ] profile.sqlite[2/2] [===24%                      ] profile.sqlite[2/2] [====25%                     ] profile.sqlite[2/2] [====26%                     ] profile.sqlite[2/2] [====27%                     ] profile.sqlite[2/2] [====28%                     ] profile.sqlite[2/2] [=====29%                    ] profile.sqlite[2/2] [=====30%                    ] profile.sqlite[2/2] [=====31%                    ] profile.sqlite[2/2] [=====32%                    ] profile.sqlite[2/2] [======33%                   ] profile.sqlite[2/2] [======34%                   ] profile.sqlite[2/2] [======35%                   ] profile.sqlite[2/2] [=======36%                  ] profile.sqlite[2/2] [=======37%                  ] profile.sqlite[2/2] [=======38%                  ] profile.sqlite[2/2] [=======39%                  ] profile.sqlite[2/2] [========40%                 ] profile.sqlite[2/2] [========41%                 ] profile.sqlite[2/2] [========42%                 ] profile.sqlite[2/2] [=========43%                ] profile.sqlite[2/2] [=========44%                ] profile.sqlite[2/2] [=========45%                ] profile.sqlite[2/2] [=========46%                ] profile.sqlite[2/2] [==========47%               ] profile.sqlite[2/2] [==========48%               ] profile.sqlite[2/2] [==========49%               ] profile.sqlite[2/2] [===========50%              ] profile.sqlite[2/2] [===========51%              ] profile.sqlite[2/2] [===========52%              ] profile.sqlite[2/2] [===========53%              ] profile.sqlite[2/2] [============54%             ] profile.sqlite[2/2] [============55%             ] profile.sqlite[2/2] [============56%             ] profile.sqlite[2/2] [============57%             ] profile.sqlite[2/2] [=============58%            ] profile.sqlite[2/2] [=============59%            ] profile.sqlite[2/2] [=============60%            ] profile.sqlite[2/2] [==============61%           ] profile.sqlite[2/2] [==============62%           ] profile.sqlite[2/2] [==============63%           ] profile.sqlite[2/2] [==============64%           ] profile.sqlite[2/2] [===============65%          ] profile.sqlite[2/2] [===============66%          ] profile.sqlite[2/2] [===============67%          ] profile.sqlite[2/2] [================68%         ] profile.sqlite[2/2] [================69%         ] profile.sqlite[2/2] [================70%         ] profile.sqlite[2/2] [================71%         ] profile.sqlite[2/2] [=================72%        ] profile.sqlite[2/2] [=================73%        ] profile.sqlite[2/2] [=================74%        ] profile.sqlite[2/2] [==================75%       ] profile.sqlite[2/2] [==================76%       ] profile.sqlite[2/2] [==================77%       ] profile.sqlite[2/2] [==================78%       ] profile.sqlite[2/2] [===================79%      ] profile.sqlite[2/2] [===================80%      ] profile.sqlite[2/2] [===================81%      ] profile.sqlite[2/2] [===================82%      ] profile.sqlite[2/2] [====================83%     ] profile.sqlite[2/2] [====================84%     ] profile.sqlite[2/2] [====================85%     ] profile.sqlite[2/2] [=====================86%    ] profile.sqlite[2/2] [=====================87%    ] profile.sqlite[2/2] [=====================88%    ] profile.sqlite[2/2] [=====================89%    ] profile.sqlite[2/2] [======================90%   ] profile.sqlite[2/2] [======================91%   ] profile.sqlite[2/2] [======================92%   ] profile.sqlite[2/2] [=======================93%  ] profile.sqlite[2/2] [=======================94%  ] profile.sqlite[2/2] [=======================95%  ] profile.sqlite[2/2] [=======================96%  ] profile.sqlite[2/2] [========================97% ] profile.sqlite[2/2] [========================98% ] profile.sqlite[2/2] [========================99% ] profile.sqlite[2/2] [========================100%] profile.sqlite[2/2] [========================100%] profile.sqlite
+Generated:
+	/home/ethan/github/ece405-assignment4-hpc/report/data/section2/assignment_section2_ddp_nsys_xl/overlap_individual_nccl_cuda_ws2_xl_ctx128_bs4/profile.nsys-rep
+	/home/ethan/github/ece405-assignment4-hpc/report/data/section2/assignment_section2_ddp_nsys_xl/overlap_individual_nccl_cuda_ws2_xl_ctx128_bs4/profile.sqlite
